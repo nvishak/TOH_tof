@@ -1,0 +1,17 @@
+
+.lineHeightClass{line-height: 40px;}
+
+.borderClass {
+    border: 1px solid black;
+}
+.borderRight{
+    border-right:1px solid black ;
+}
+.borderBottom{
+    border-bottom:1px solid black ;
+}
+.borderLeft{
+    border-left: 1px solid black;
+}
+.lineHeightClass ul li{cursor: pointer;}
+.lineHeightClass ul li a{ padding: 10px;}

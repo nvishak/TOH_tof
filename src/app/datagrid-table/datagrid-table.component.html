@@ -1,0 +1,25 @@
+<div>
+    <div>
+        <h5>Depot Monats KPIs</h5>
+    </div>
+    <div class="borderClass" id="tableMethods">
+        <span class="btn-link pl-2 pr-2 borderRight" (click)="expandAll()">Alles aufklappen</span>
+        <span class="btn-link pl-2 pr-2 borderRight" (click)="collapseAll()">Alles zuklappen</span>
+        <span class="btn-link pl-2 pr-2" (click)="columnWidth()">Spaltenbreite</span>
+    </div>
+    <div class="data-table borderBottom borderRight borderLeft">
+        <table class="table">
+            <thead>
+                <tr>
+                <th *ngFor="let header of table.tableHeaders; let num = index" class="borderBottom borderRight">{{header}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of table.tableRows">
+                    <td *ngFor="let data of row">{{data}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

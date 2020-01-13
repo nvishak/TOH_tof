@@ -1,0 +1,66 @@
+<!--  -->
+
+<!-- <div class="btn btn-primary">datagrid works!</div> -->
+<div class="container-fluid">
+    <div class="row border-dark border-bottom">
+      <div class="col-lg-4 col-md-4 lineHeightClass">
+          <!-- <div class="d-inline-block btn btn-light pl-3 text-left">
+              Module
+          </div>
+          <div class="d-inline-block pl-3 text-left">
+              Info
+          </div> -->
+          <ul class="nav nav-tabs nav-tabs-justified">
+            <li class="clickable borderRight"><a>Module</a></li>
+            <li class="clickable"><a>Info</a></li>
+  
+          </ul>
+      </div>
+      <div class="col-lg-8 col-md-8 text-right">
+          <div class="d-inline-block pl-3 align-middle">
+              13-01-2019 05:48:56
+          </div>
+          <div class=" btn btn-link d-inline-block pl-3">
+              Password
+          </div>
+          <div class="btn btn-link d-inline-block pl-3" [routerLink]="['']">
+              Logout
+          </div>
+      </div>
+  
+  </div>
+  
+
+    <!-- Tabs Block -->
+    <div class="row border-dark border-bottom">
+        <div class="d-inline-block pl-3">
+            Home
+        </div>
+        <div class="d-inline-block pl-3">
+            Depot Ksi
+        </div>
+        <div class="d-inline-block pl-3">
+            Etc.
+        </div>
+    </div>
+
+    <!-- Excel Export block -->
+    <div class="row">
+        <div>
+            <button (click)="export()">Excel Export</button>
+        </div>
+
+    </div>
+
+
+    <!-- Table Components -->
+    <div class="row">
+        <!-- Left Table -->
+        <div class="col-lg-2 col-md-2">
+            <app-filters></app-filters>
+        </div>
+        <!-- Right Table -->
+        <div class=" col-lg-10 col-md-10 border">
+            <app-datagrid-table></app-datagrid-table>
+        </div>
+    </div>

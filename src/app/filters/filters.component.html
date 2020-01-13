@@ -1,0 +1,19 @@
+<div class="border border-secondary mb-3 mt-3">
+    <div class="btn btn-light btn-md d-block">
+        Filter
+    </div>
+
+    <div class="btn btn-light btn-md d-block" style="width: 50%;">
+        Loschen
+    </div>
+</div>
+
+
+<div *ngFor="let item of filterOptions" class="border border-secondary mb-3">
+    <span>{{item.text}}</span>
+    <div class="text-center" [ngSwitch]="item.type">
+        <input type="date" name="item.text" placeholder="Datepicker" *ngSwitchCase="'date'">
+        <input type="text" name="item.text" [placeholder]="item.placeHolder" *ngSwitchCase="'text'">
+    </div>
+</div>
+
