@@ -1,8 +1,24 @@
 
 <div id="filterButton" class="border border-secondary mb-3 mt-3 ">
-    <div class="btn btn-light btn-md d-block">
+    <div class="btn btn-light btn-md d-block" (click)="testApi(1)">
         Filter
     </div>
+    <div class="btn btn-light btn-md d-block" (click)="testApi(2)">
+        stammdaten/depots  All depots
+    </div>
+    <div class="btn btn-light btn-md d-block" (click)="testApi(3)">
+        stammdaten/kpigruppen
+    </div>
+    <div class="btn btn-light btn-md d-block" (click)="testApi(4)">
+        /stammdaten/kpisets
+    </div>
+    <div class="btn btn-light btn-md d-block" (click)="testApi(5)">
+        kpis/depot/monat/
+    </div>
+    <div class="btn btn-light btn-md d-block" (click)="testApi(6)">
+        stammdaten/depots/
+    </div>
+
 
     <div class="btn btn-light btn-md d-block mt-2" style="width: 50%;">
         Loschen
