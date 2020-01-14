@@ -1,7 +1,7 @@
 <!--  -->
 
 <!-- <div class="btn btn-primary">datagrid works!</div> -->
-<div class="container-fluid">
+<div class="container-fluid mb-4">
     <div class="row border-dark border-bottom">
       <div class="col-lg-4 col-md-4 lineHeightClass">
           <!-- <div class="d-inline-block btn btn-light pl-3 text-left">
@@ -33,21 +33,23 @@
 
     <!-- Tabs Block -->
     <div class="row border-dark border-bottom">
-        <div class="d-inline-block pl-3">
+        <div class="btn btn-sm  d-inline-block ">
             Home
         </div>
-        <div class="d-inline-block pl-3">
+        <div class="btn btn-sm d-inline-block ">
             Depot Ksi
         </div>
-        <div class="d-inline-block pl-3">
+        <div class="btn btn-sm  d-inline-block">
             Etc.
         </div>
     </div>
 
+    <div>
     <!-- Excel Export block -->
-    <div class="row">
-        <div>
-            <button (click)="export()">Excel Export</button>
+    <div class="row exportdiv border-bottom mb-3">
+        <div (click)="export()">
+            <img src="../../assets/excel.png">
+            <!-- <button (click)="export()">Excel Export</button> -->
         </div>
 
     </div>
@@ -56,11 +58,13 @@
     <!-- Table Components -->
     <div class="row">
         <!-- Left Table -->
-        <div class="col-lg-2 col-md-2">
+        <div class="col-lg-3 col-md-3">
             <app-filters></app-filters>
         </div>
         <!-- Right Table -->
-        <div class=" col-lg-10 col-md-10 border">
+        <div class=" col-lg-9 col-md-9 border">
             <app-datagrid-table></app-datagrid-table>
         </div>
     </div>
+</div>
+</div>

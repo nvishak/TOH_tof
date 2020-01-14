@@ -1,4 +1,4 @@
-
+.container-fluid{margin-top: 50px;}
 .lineHeightClass{line-height: 40px;}
 
 .borderClass {
@@ -15,3 +15,5 @@
 }
 .lineHeightClass ul li{cursor: pointer;}
 .lineHeightClass ul li a{ padding: 10px;}
+.exportdiv{border-top: 20px solid lightgray; padding: 10px;}
+.exportdiv img {width: 30px; cursor: pointer;}

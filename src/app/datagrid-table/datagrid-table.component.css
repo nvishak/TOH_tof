@@ -1,12 +1,12 @@
 td {
-  width: 220px;
+  /* width: 220px; */
   text-align: center;
   padding: 8px;
 }
 
 th {
   color: rgba(56, 65, 72, 0.82);
-  width: 220px;
+  min-width: 100px;
   background-color: #E9EFF3;
   text-align: center;
   padding: 8px;
@@ -27,7 +27,7 @@ table tbody tr td{
 }
 
 .data-table{
-    min-height: 420px;
+    min-height: 650px;
 }
 
 

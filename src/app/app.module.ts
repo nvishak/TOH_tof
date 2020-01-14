@@ -7,6 +7,11 @@ import { DatagridComponent } from './datagrid/datagrid.component';
 import { DatagridTableComponent } from './datagrid-table/datagrid-table.component';
 import { FiltersComponent } from './filters/filters.component';
 import { LoginComponent } from './login/login.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { DropdownSearchComponent } from './dropdown-search/dropdown-search.component';
+ 
 
 @NgModule({
   declarations: [
@@ -14,13 +19,17 @@ import { LoginComponent } from './login/login.component';
     DatagridComponent,
     DatagridTableComponent,
     FiltersComponent,
-    LoginComponent
+    LoginComponent,
+    DatepickerComponent,
+    DropdownSearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [FormsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

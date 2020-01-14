@@ -1,19 +1,38 @@
-<div class="border border-secondary mb-3 mt-3">
+
+<div id="filterButton" class="border border-secondary mb-3 mt-3 ">
     <div class="btn btn-light btn-md d-block">
         Filter
     </div>
 
-    <div class="btn btn-light btn-md d-block" style="width: 50%;">
+    <div class="btn btn-light btn-md d-block mt-2" style="width: 50%;">
         Loschen
     </div>
 </div>
+ 
 
-
+<div id="filterOptions">
 <div *ngFor="let item of filterOptions" class="border border-secondary mb-3">
+    <div class="filterHeaders">
     <span>{{item.text}}</span>
-    <div class="text-center" [ngSwitch]="item.type">
-        <input type="date" name="item.text" placeholder="Datepicker" *ngSwitchCase="'date'">
-        <input type="text" name="item.text" [placeholder]="item.placeHolder" *ngSwitchCase="'text'">
     </div>
+    <div class="text-center p-3 filterBody" [ngSwitch]="item.type">
+        <!-- <input type="date" name="item.text" placeholder="Datepicker" *ngSwitchCase="'date'"> -->
+        <div  *ngSwitchCase="'date'" class="form-group">
+            <app-datepicker (selectedDate)="method($event)"></app-datepicker>
+          </div>
+        <input type="text" name="item.text"  [placeholder]="item.placeHolder" *ngSwitchCase="'text'">
+        <!-- <div ngbDropdown *ngSwitchCase="'drop'" >
+            <input class="form-control" type="text" [placeholder]="item.placeHolder" ngbDropdownToggle placement="bottom">
+            <div class="dropdownGroup" ngbDropdownMenu >
+            <li *ngFor="let options of item.filters">{{options}}</li>
+            </div>
+        </div> -->
+        <app-dropdown-search [data]="item" *ngSwitchCase="'drop'" (selectedOption)="optionSelected($event, item)" ></app-dropdown-search>
+
+        <ul *ngSwitchCase="'selection'" class="list-group text-left">
+        <li *ngFor="let list of item.filters" class="list-group-item" (click)="optionSelected(list, item)">{{list}}</li> 
+        </ul>
+    </div>
+</div>
 </div>
 
