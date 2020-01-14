@@ -17,3 +17,6 @@
 .lineHeightClass ul li a{ padding: 10px;}
 .exportdiv{border-top: 20px solid lightgray; padding: 10px;}
 .exportdiv img {width: 30px; cursor: pointer;}
+
+.homeButtons{ font-size: 12px; border: 1px solid;background-color: #EAEAEA;}
+#homeButtonGroup{background-color: #93A0A6;}

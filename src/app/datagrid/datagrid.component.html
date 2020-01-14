@@ -18,7 +18,7 @@
       </div>
       <div class="col-lg-8 col-md-8 text-right">
           <div class="d-inline-block pl-3 align-middle">
-              13-01-2019 05:48:56
+            {{ time | date: 'hh:mm:ss a' }}
           </div>
           <div class=" btn btn-link d-inline-block pl-3">
               Password
@@ -32,14 +32,14 @@
   
 
     <!-- Tabs Block -->
-    <div class="row border-dark border-bottom">
-        <div class="btn btn-sm  d-inline-block ">
+    <div id="homeButtonGroup" class="row border-dark border-bottom p-1 ">
+        <div class="btn btn-sm  d-inline-block homeButtons mr-2">
             Home
         </div>
-        <div class="btn btn-sm d-inline-block ">
+        <div class="btn btn-sm d-inline-block homeButtons mr-2">
             Depot Ksi
         </div>
-        <div class="btn btn-sm  d-inline-block">
+        <div class="btn btn-sm  d-inline-block homeButtons mr-2">
             Etc.
         </div>
     </div>
