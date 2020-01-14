@@ -1,32 +1,32 @@
-<!--  -->
+<div>
+    <br>
+      <div class="container">
+          <div class="container">
+            <mat-tab-group>
+                <mat-tab label="Module">
+                  <h1>Some tab content</h1>
+                  <p>...</p>
+                </mat-tab>
+                <mat-tab label="Info">
+                  <h1>Some more tab content</h1>
+                  <p>...</p>
+                </mat-tab>
+                <div id="time"></div>
+                <mat-tab  [label]='currentTime' [disabled]="true">
+                </mat-tab>
+            </mat-tab-group>
+          </div> 
+      </div>
+      <br>
+      <div class="container">
+      </div>
+  </div>
 
-<!-- <div class="btn btn-primary">datagrid works!</div> -->
-<div class="container-fluid mb-4">
+<div class="blocks">
     <div class="row border-dark border-bottom">
-      <div class="col-lg-4 col-md-4 lineHeightClass">
-          <!-- <div class="d-inline-block btn btn-light pl-3 text-left">
-              Module
-          </div>
-          <div class="d-inline-block pl-3 text-left">
-              Info
-          </div> -->
-          <ul class="nav nav-tabs nav-tabs-justified">
-            <li class="clickable borderRight"><a>Module</a></li>
-            <li class="clickable"><a>Info</a></li>
-  
-          </ul>
-      </div>
-      <div class="col-lg-8 col-md-8 text-right">
-          <div class="d-inline-block pl-3 align-middle">
-            {{ time | date: 'hh:mm:ss a' }}
-          </div>
-          <div class=" btn btn-link d-inline-block pl-3">
-              Password
-          </div>
-          <div class="btn btn-link d-inline-block pl-3" [routerLink]="['']">
-              Logout
-          </div>
-      </div>
+        <button  mat-button>Module</button>
+        <button  mat-button>Info</button>
+
   
   </div>
   

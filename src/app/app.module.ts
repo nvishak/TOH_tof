@@ -11,7 +11,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DropdownSearchComponent } from './dropdown-search/dropdown-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
+import {MaterialModule} from './material.module';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,12 @@ import { DropdownSearchComponent } from './dropdown-search/dropdown-search.compo
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FlexLayoutModule,
+    MatCardModule, 
+    MatTabsModule
   ],
   providers: [FormsModule],
   bootstrap: [AppComponent]

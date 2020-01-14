@@ -10,10 +10,11 @@ export class DatagridComponent implements OnInit {
   constructor() { }
   time = new Date();
   timer;
- 
+  currentTime;
   ngOnInit() {
     this.timer = setInterval(() => {
       this.time = new Date();
+      this.currentTime = this.time.toLocaleTimeString('eu-de');
     }, 1000);
   }
 
