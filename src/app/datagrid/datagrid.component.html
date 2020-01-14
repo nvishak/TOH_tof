@@ -4,58 +4,29 @@
           <div class="container">
             <mat-tab-group>
                 <mat-tab label="Module">
-                  <h1>Some tab content</h1>
-                  <p>...</p>
-                </mat-tab>
-                <mat-tab label="Info">
-                  <h1>Some more tab content</h1>
-                  <p>...</p>
-                </mat-tab>
-                <div id="time"></div>
-                <mat-tab  [label]='currentTime' [disabled]="true">
-                </mat-tab>
-            </mat-tab-group>
-          </div> 
-      </div>
-      <br>
-      <div class="container">
-      </div>
-  </div>
+                    <div id="homeButtonGroup" class="row border-dark border-bottom p-1 ">
+                        <div class="btn btn-sm  d-inline-block homeButtons mr-2">
+                            Home
+                        </div>
+                        <div class="btn btn-sm d-inline-block homeButtons mr-2">
+                            Depot Ksi
+                        </div>
+                        <div class="btn btn-sm  d-inline-block homeButtons mr-2">
+                            Etc.
+                        </div>
+                    </div>
 
-<div class="blocks">
-    <div class="row border-dark border-bottom">
-        <button  mat-button>Module</button>
-        <button  mat-button>Info</button>
-
-  
-  </div>
-  
-
-    <!-- Tabs Block -->
-    <div id="homeButtonGroup" class="row border-dark border-bottom p-1 ">
-        <div class="btn btn-sm  d-inline-block homeButtons mr-2">
-            Home
-        </div>
-        <div class="btn btn-sm d-inline-block homeButtons mr-2">
-            Depot Ksi
-        </div>
-        <div class="btn btn-sm  d-inline-block homeButtons mr-2">
-            Etc.
-        </div>
-    </div>
-
-    <div>
-    <!-- Excel Export block -->
-    <div class="row exportdiv border-bottom mb-3">
-        <div (click)="export()">
-            <img src="../../assets/excel.png">
-            <!-- <button (click)="export()">Excel Export</button> -->
-        </div>
-
-    </div>
-
-
-    <!-- Table Components -->
+                    <div>
+                        <!-- Excel Export block -->
+                        <div class="row exportdiv border-bottom mb-3">
+                            <div (click)="export()">
+                                <img src="../../assets/excel.png">
+                                <!-- <button (click)="export()">Excel Export</button> -->
+                            </div>
+                    
+                        </div>
+                    </div>
+                        <!-- Table Components -->
     <div class="row">
         <!-- Left Table -->
         <div class="col-lg-3 col-md-3">
@@ -65,6 +36,32 @@
         <div class=" col-lg-9 col-md-9 border">
             <app-datagrid-table></app-datagrid-table>
         </div>
-    </div>
-</div>
+    </div>    
+                </mat-tab>
+                <mat-tab label="Info">
+                  <h1>Some more tab content</h1>
+                  <p>...</p>
+                </mat-tab>
+                <div id="time"></div>
+                <mat-tab  [label]='currentTime' [disabled]="true">
+                </mat-tab>
+            </mat-tab-group>
+
+          </div> 
+      </div>
+      <br>
+      <div class="container">
+      </div>
+  </div>
+
+<div class="blocks">
+    <!-- <div class="row border-dark border-bottom">
+        <button  mat-button>Module</button>
+        <button  mat-button>Info</button>
+
+  
+  </div> -->
+  
+
+    <!-- Tabs Block -->
 </div>
