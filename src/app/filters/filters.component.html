@@ -1,4 +1,3 @@
-
 <div id="filterButton" class="border border-secondary mb-3 mt-3 ">
     <div class="btn btn-light btn-md d-block">
         Filter
@@ -8,31 +7,47 @@
         Loschen
     </div>
 </div>
- 
+
 
 <div id="filterOptions">
-<div *ngFor="let item of filterOptions" class="border border-secondary mb-3">
-    <div class="filterHeaders">
-    <span>{{item.text}}</span>
-    </div>
-    <div class="text-center p-3 filterBody" [ngSwitch]="item.type">
-        <!-- <input type="date" name="item.text" placeholder="Datepicker" *ngSwitchCase="'date'"> -->
-        <div  *ngSwitchCase="'date'" class="form-group">
-            <app-datepicker (selectedDate)="method($event)"></app-datepicker>
-          </div>
-        <input type="text" name="item.text"  [placeholder]="item.placeHolder" *ngSwitchCase="'text'">
-        <!-- <div ngbDropdown *ngSwitchCase="'drop'" >
+    <div *ngFor="let item of filterOptions" class="border border-secondary mb-3">
+        <!-- <div class="filterHeaders"> -->
+        <mat-card>
+            <mat-card-header id="filterCards">
+                <!-- <mat-card-title>{{item.text}}</mat-card-title> -->
+              
+            <span>{{item.text}}</span>
+            <!-- </div> -->
+        </mat-card-header> 
+        <mat-card-content>
+    
+            <div class="text-center p-3 filterBody" [ngSwitch]="item.type">
+                <!-- <input type="date" name="item.text" placeholder="Datepicker" *ngSwitchCase="'date'"> -->
+                <div *ngSwitchCase="'date'">
+                    <app-datepicker (selectedDate)="method($event)"></app-datepicker>
+                </div>
+
+                <input type="text" name="item.text" [placeholder]="item.placeHolder" *ngSwitchCase="'text'">
+                <!-- <div ngbDropdown *ngSwitchCase="'drop'" >
             <input class="form-control" type="text" [placeholder]="item.placeHolder" ngbDropdownToggle placement="bottom">
             <div class="dropdownGroup" ngbDropdownMenu >
             <li *ngFor="let options of item.filters">{{options}}</li>
             </div>
         </div> -->
-        <app-dropdown-search [data]="item" *ngSwitchCase="'drop'" (selectedOption)="optionSelected($event, item)" ></app-dropdown-search>
+                <app-dropdown-search [data]="item" *ngSwitchCase="'drop'"
+                    (selectedOption)="optionSelected($event, item)"></app-dropdown-search>
 
-        <ul *ngSwitchCase="'selection'" class="list-group text-left">
-        <li *ngFor="let list of item.filters" class="list-group-item" (click)="optionSelected(list, item)">{{list}}</li> 
-        </ul>
+                <ul *ngSwitchCase="'selection'" class="list-group text-left">
+                    <li *ngFor="let list of item.filters" class="list-group-item" (click)="optionSelected(list, item)">
+                        {{list}}</li>
+                </ul>
+<!-- 
+                <mat-list role="list" *ngSwitchCase="'selection'">
+                <mat-list-item role="listitem" *ngFor="let list of item.filters" (click)="optionSelected(list, item)" >{{list}}</mat-list-item>                    
+                </mat-list> -->
+
+            </div>
+            </mat-card-content>
+        </mat-card>
     </div>
 </div>
-</div>
-

@@ -1,5 +1,15 @@
+<!-- ngbootstarp Dropdown -->
+<!-- <div ngbDropdown >
+    <input  class="form-control" type="text" [(ngModel)]="binding" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom">
+    <div class="dropdownGroup border" ngbDropdownMenu >
+    <li *ngFor="let options of data.filters" (click)="selectOption(options)" ngbDropdownItem>{{options}}</li>
+    </div>
+</div> -->
+
+
+<!-- material based dropdown -->
 <div ngbDropdown >
-    <input class="form-control" type="text" [(ngModel)]="binding" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom">
+    <input  class="form-control" type="text" [(ngModel)]="binding" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom">
     <div class="dropdownGroup border" ngbDropdownMenu >
     <li *ngFor="let options of data.filters" (click)="selectOption(options)" ngbDropdownItem>{{options}}</li>
     </div>
