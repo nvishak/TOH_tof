@@ -1,0 +1,30 @@
+export interface Monat {
+    kpiTypId:number;
+    kpiTypBezeichnung:string;
+    kpiGruppeId:number;
+    kpiGruppeBezeichnung:string;
+    partner_id_fk:number;
+    depotnr:number;
+    jahr:number;
+    wertJanuar: number;
+    wertFebruar: number;
+    wertMaerz: number;
+    wertApril: number;
+    wertMai: number;
+    wertJuni: number;
+    wertJuli: number;
+    wertAugust: number;
+    wertSeptember: number;
+    wertOktober: number;
+    wertNovember: number;
+    wertDezember: number;
+    wertQ1: number;
+    wertQ2: number;
+    wertQ3: number;
+    wertQ4: number;
+    wertJahr: number;
+    wertMonatMin:number;
+    wertMonatMax: number;
+    wertMonatBest: number;
+    wertMonatZiel: number;
+}
