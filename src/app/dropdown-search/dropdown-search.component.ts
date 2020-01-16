@@ -15,7 +15,13 @@ export class DropdownSearchComponent implements OnInit {
   }
 
   selectOption(value){
-    this.binding = value;
-    this.selectedOption.emit(this.binding);
+    let temp;
+    if(this.data.text == 'Kategorie' || this.data.text == 'KPI Sets'){
+      temp = value.bezeichnung;
+    }else{
+      temp = value;
+    }
+    this.binding = temp;
+    this.selectedOption.emit(value);
   }
 }

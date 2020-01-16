@@ -17,6 +17,7 @@ import {MaterialModule} from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MaterialModule,
     FlexLayoutModule,
     MatCardModule, 
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
   ],
   providers: [FormsModule],
   bootstrap: [AppComponent]
