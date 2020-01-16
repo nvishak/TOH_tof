@@ -36,7 +36,7 @@ export class DefaultServiceService {
   }
 
   getDepot(id){
-    return this.http.get("http://10.221.144.44:8080/tofKpiRS/stammdaten/depots/" + id);
+    return this.http.get<Depot>("http://10.221.144.44:8080/tofKpiRS/stammdaten/depots/" + id);
   }
 
   onFirstComponentButtonClick() {    
