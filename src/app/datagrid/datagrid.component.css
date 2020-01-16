@@ -15,14 +15,16 @@
 }
 .lineHeightClass ul li{cursor: pointer;}
 .lineHeightClass ul li a{ padding: 10px;}
-.exportdiv{border-top: 20px solid lightgray; padding: 10px;}
+.exportdiv{padding: 10px;}
 .exportdiv img {width: 30px; cursor: pointer;}
 
-.homeButtons{ font-size: 12px; border: 1px solid;background-color: #EAEAEA;}
-#homeButtonGroup{background-color: #93A0A6;}
+.homeButtons{ font-size: 14px; color: #ef8e29;font-weight: 500; letter-spacing: 0.5px;}
+/* #homeButtonGroup{background-color: #93A0A6;} */
 .container{ margin-right: unset;margin-left: unset;max-width: 100%;}
 #time #mat-tab-label-0-2 {
     position: relative;
     left: 73%;
 }
 #homeButtonGroup, .exportdiv{margin-left: 0;}
+#homeButtonGroup div:not(:last-child){border-right: 1px solid;}
+#homeButtonGroup{border-bottom:1px solid #3f51b5 ;}

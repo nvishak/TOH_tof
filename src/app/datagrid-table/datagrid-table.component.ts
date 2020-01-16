@@ -32,7 +32,7 @@ export class DatagridTableComponent implements OnInit {
   }
 
   getTableData(partnerId){
-
+    document.documentElement.setAttribute('style','cursor:wait');
     this.table.tableRows = [];
     this.defaultService.getMonat(partnerId).subscribe(response =>{
       this.data = response;
@@ -42,10 +42,13 @@ export class DatagridTableComponent implements OnInit {
         row.push({partnerId: element.partner_id_fk, kpiGruppeId: element.kpiGruppeId, depotnr:element.depotnr,kpiTypId: element.kpiTypId ,rows:[element.kpiGruppeBezeichnung,element.wertJanuar,element.wertFebruar,element.wertMaerz,element.wertApril,element.wertMai,element.wertJuni,element.wertJuli,element.wertAugust,element.wertSeptember,element.wertOktober,element.wertNovember,element.wertDezember,element.wertQ1,element.wertQ2,element.wertQ3,element.wertQ4, element.wertMonatBest, element.wertMonatZiel ] });
       });
     }
+      document.documentElement.setAttribute('style','cursor:auto');
       this.table.tableRows = row;
       this.newFlag = this.table.tableRows.length ? false : true;
     });
-    
+    setTimeout(function(){
+      document.documentElement.setAttribute('style','cursor:auto');
+    },2000);
   }
   //Method for Expand all
   expandAll(){
