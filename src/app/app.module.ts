@@ -18,6 +18,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     MatCardModule, 
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule
+    
   ],
   providers: [FormsModule],
   bootstrap: [AppComponent]

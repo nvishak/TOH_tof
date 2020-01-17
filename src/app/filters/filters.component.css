@@ -21,7 +21,7 @@
 
 #filterOptions li{ padding: 5px; border: 0; cursor: pointer;}
 
-#filterOptions ul.list-group.text-left {max-height: 155px ;overflow-y: auto;}
+#filterOptions ul.list-group.text-left {max-height: 110px;overflow-y: auto; min-height: 110px;}
 /* .dropdownGroup{
     max-height: 150px; overflow-y: auto;
     -ms-overflow-style: none;

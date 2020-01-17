@@ -25,6 +25,8 @@ export class FiltersComponent implements OnInit {
   selectedArray: any = [];
   previousSelected: any = -1;
   validFilter: boolean= false;
+  depotBind: any;
+  newArray: any;
   constructor(private defaultService: DefaultServiceService) { }
   @Input() mainFilterData: any;
 
@@ -47,10 +49,11 @@ export class FiltersComponent implements OnInit {
       this.allPartner = data;
       for (var i = 0; i < this.allPartner.length; i++) {
         if (this.allPartner[i].bezeichnung)
-          temp.push(this.allPartner[i].bezeichnung);
-        this.selectedArray[i] = false;
+          temp.push({bezeichnung: this.allPartner[i].bezeichnung, depotnr:this.allPartner[i].depotnr});
+        this.selectedArray[this.allPartner[i].depotnr] = false;
       }
-      this.filterOptions[3].filters = temp.sort();
+      // this.filterOptions[3].filters = temp.sort();
+      this.newArray = temp.sort((a,b) => (a.bezeichnung > b.bezeichnung) ? 1 : ((b.bezeichnung > a.bezeichnung) ? -1 : 0));
     });
   }
 
@@ -62,15 +65,15 @@ export class FiltersComponent implements OnInit {
     console.log(event, text);
     if (text == 'Region' || text == 'Depot') {
 
-      let temp = this.allPartner.filter(ele => {
-        if (ele.bezeichnung == event)
-          return ele;
-      })
-      this.selectedDepot = temp[0].depotnr;
-      if (this.selectedArray[index] != true) {
+      // let temp = this.allPartner.filter(ele => {
+      //   if (ele.bezeichnung == event)
+      //     return ele;
+      // })
+      this.selectedDepot = event.depotnr;
+      if (this.selectedArray[event.depotnr] != true) {
         this.selectedArray[this.previousSelected] = false;
-        this.selectedArray[index] = true;
-        this.previousSelected = index;
+        this.selectedArray[event.depotnr] = true;
+        this.previousSelected = event.depotnr;
       }
 
     }
@@ -80,12 +83,12 @@ export class FiltersComponent implements OnInit {
       this.defaultService.onFirstComponentButtonClick();
     }
     if (text == 'Kategorie') {
-      this.selectedGroup = event.code;
-      this.filterOptions[1].bind = event.bezeichnung;
+      this.selectedGroup = event && event.code ? event.code : '';
+      this.filterOptions[1].bind = event && event.bezeichnung ? event.bezeichnung : '';
     }
     if (text == 'KPI Sets') {
-      this.selectedKpi = event.code;
-      this.filterOptions[2].bind = event.bezeichnung;
+      this.selectedKpi = event && event.code ? event.code : '';
+      this.filterOptions[2].bind = event && event.bezeichnung ? event.bezeichnung : '';
     }
 
   }
@@ -129,13 +132,9 @@ export class FiltersComponent implements OnInit {
   }
 
   filterData() {
-    if (this.selectedGroup && this.selectedKpi && this.selectedDepot) {
+    
       this.defaultService.setFilterData(this.selectedGroup, this.selectedKpi, 0, this.selectedDepot);
       this.defaultService.filerClick();
-      this.validFilter = false;
-    }else{
-        this.validFilter = true;
-    }
   }
 
   resetFilterData() {

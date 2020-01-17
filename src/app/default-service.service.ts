@@ -40,11 +40,21 @@ export class DefaultServiceService {
   }
   getMonat(id, firstTime){
     if(!firstTime){
-    const params = new HttpParams()
-    .set('kpiGruppen[]',this.kpiGroupValue)
-    .set('kpiSet',this.kpiSetValue)    
-    .set('depotNrs',this.depotNrsValue)
-    .set('jahr','2019');
+        let paramsMap = new Map<any,any>();
+        paramsMap.set('kpiGruppen',this.kpiGroupValue);
+        paramsMap.set('kpiSet',this.kpiSetValue);        
+        paramsMap.set('depotNrs',this.depotNrsValue);        
+        paramsMap.set('jahr',this.jahrValue);
+  
+      let params = new HttpParams();
+      paramsMap.forEach((value: any, key: any) => {
+        if(value)
+          params = params.set(key, value);
+      });
+    // .set('kpiGruppen[]',this.kpiGroupValue)
+    // .set('kpiSet',this.kpiSetValue)    
+    // .set('depotNrs',this.depotNrsValue)
+    // .set('jahr','2019');
     return this.http.get<Monat>("http://10.221.144.44:8080/tofKpiRS/kpis/depot/monat/" + id, {params: params});
     }else
     {
@@ -71,14 +81,14 @@ export class DefaultServiceService {
   setFilterData(group,kpi, jahr, depo){
     this.kpiGroupValue = group ? group : '';
     this.kpiSetValue = kpi ? kpi : '';
-    this.jahrValue = jahr ? jahr : 0;
+    this.jahrValue = jahr ? jahr : '';
     this.depotNrsValue = depo ? depo : '';
   }
 
   resetFilterData(){
     this.kpiGroupValue = '';
     this.kpiSetValue = '';
-    this.jahrValue = 0;
+    this.jahrValue = '';
     this.depotNrsValue = '';
     this.resetFilterFunction.emit();
   }

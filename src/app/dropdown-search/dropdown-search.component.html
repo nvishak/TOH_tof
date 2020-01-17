@@ -17,8 +17,8 @@
 
 
 <div ngbDropdown *ngIf="data.text == 'Kategorie' || data.text == 'KPI Sets'" >
-    <input  class="form-control" type="text" [(ngModel)]="bind" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom">
+    <input class="form-control" type="search" [(ngModel)]="bind" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom" (ngModelChange)="myMethod($event)">
     <div class="dropdownGroup border" ngbDropdownMenu >
-    <li *ngFor="let options of data.filters" (click)="selectOption(options)" ngbDropdownItem>{{options.bezeichnung}}</li>
+    <li *ngFor="let options of data.filters | filter:bind" (click)="selectOption(options)" ngbDropdownItem>{{options.bezeichnung}}</li>
     </div>
 </div>
