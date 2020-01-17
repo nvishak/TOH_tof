@@ -18,7 +18,7 @@
                 <tr *ngFor="let row of table.tableRows">
                     <td *ngFor="let data of row.rows">{{data}}</td>
                 </tr>
-                <tr id="noData" *ngIf="newFlag"><td colspan='100'>No Data Present</td></tr>
+                <tr id="noData" *ngIf="newFlag"><td colspan='100'>{{noDataValue}}</td></tr>
             </tbody>
 
         </table>

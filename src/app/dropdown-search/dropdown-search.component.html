@@ -9,7 +9,7 @@
 
 <!-- material based dropdown -->
 <div ngbDropdown *ngIf="data.text != 'Kategorie' && data.text != 'KPI Sets'">
-    <input  class="form-control" type="text" [(ngModel)]="binding" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom">
+    <input  class="form-control" type="text" [(ngModel)]="bind" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom">
     <div class="dropdownGroup border" ngbDropdownMenu >
     <li *ngFor="let options of data.filters" (click)="selectOption(options)" ngbDropdownItem>{{options}}</li>
     </div>
@@ -17,7 +17,7 @@
 
 
 <div ngbDropdown *ngIf="data.text == 'Kategorie' || data.text == 'KPI Sets'" >
-    <input  class="form-control" type="text" [(ngModel)]="binding" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom">
+    <input  class="form-control" type="text" [(ngModel)]="bind" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom">
     <div class="dropdownGroup border" ngbDropdownMenu >
     <li *ngFor="let options of data.filters" (click)="selectOption(options)" ngbDropdownItem>{{options.bezeichnung}}</li>
     </div>

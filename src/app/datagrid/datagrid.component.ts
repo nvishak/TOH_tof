@@ -15,6 +15,9 @@ export class DatagridComponent implements OnInit {
     category: [],
     kpiSets: []
   };
+  version: any = {
+    value:''
+  };
 
   ngOnInit() {
     this.timer = setInterval(() => {
@@ -29,14 +32,20 @@ export class DatagridComponent implements OnInit {
     //   this.mainFilterObject.kpiSets = data;
     // });
 
+    this.defaultService.getVersion().subscribe(data => {       
+      this.version = data;
+    });
+
   }
 
-  ngOnDestroy(){
+  
+
+  ngOnDestroy() {
     clearInterval(this.timer);
   }
 
-//Export Method
-  export(){
+  //Export Method
+  export() {
     console.log("Export Method");
   }
 }

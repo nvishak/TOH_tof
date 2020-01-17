@@ -1,9 +1,9 @@
 <div id="filterButton" class="border border-secondary mb-3 mt-3 ">
-    <div class="btn btn-light btn-md d-block">
+    <div class="btn btn-light btn-md d-block" (click)="filterData()">
         Filter
     </div>
 
-    <div class="btn btn-light btn-md d-block mt-2" style="width: 50%;">
+    <div class="btn btn-light btn-md d-block mt-2" style="width: 50%;" (click)="resetFilterData()">
         Loschen
     </div>
 </div>
@@ -35,10 +35,10 @@
             </div>
         </div> -->
                 <app-dropdown-search [data]="item" *ngSwitchCase="'drop'"
-                    (selectedOption)="optionSelected($event, item.text)"></app-dropdown-search>
+                    (selectedOption)="optionSelected($event, item.text)" [bind]='item.bind'></app-dropdown-search>
 
                 <ul *ngSwitchCase="'selection'" class="list-group text-left">
-                    <li *ngFor="let list of item.filters" class="list-group-item" (click)="optionSelected(list, item.text)">
+                    <li *ngFor="let list of item.filters;index as i" class="list-group-item" (click)="optionSelected(list, item.text,i)" [ngClass]="selectedArray[i] ? 'selectedRegion' : ''">
                         {{list}}</li>
                 </ul>
 <!-- 

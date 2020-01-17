@@ -9,6 +9,7 @@ export class DropdownSearchComponent implements OnInit {
 
   constructor() { }
   @Input() data : any;
+  @Input() bind : any;
   @Output() selectedOption = new EventEmitter<object>();
   binding : any;
   ngOnInit() {

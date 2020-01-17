@@ -2,7 +2,7 @@
     <br>
       <div class="container">
           <div class="container">
-            <mat-tab-group>
+            <mat-tab-group >
                 <mat-tab label="Module">
                     <div id="homeButtonGroup" class="row p-2 ">
                         <div class="btn btn-sm  d-inline-block homeButtons mr-2">
@@ -18,7 +18,7 @@
 
                     <div>
                         <!-- Excel Export block -->
-                        <div class="row exportdiv border-bottom mb-3">
+                        <div class="row exportdiv  mb-3">
                             <div (click)="export()">
                                 <img src="../../assets/excel.png">
                                 <!-- <button (click)="export()">Excel Export</button> -->
@@ -39,8 +39,8 @@
     </div>    
                 </mat-tab>
                 <mat-tab label="Info">
-                  <h1>Some more tab content</h1>
-                  <p>...</p>
+                <h1>The Application Version is:- {{version.value}}</h1>
+                  <!-- <p>...</p> -->
                 </mat-tab>
                 <div id="time"></div>
                 <mat-tab  [label]='currentTime' [disabled]="true">

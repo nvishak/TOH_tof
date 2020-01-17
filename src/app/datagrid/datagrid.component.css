@@ -27,4 +27,4 @@
 }
 #homeButtonGroup, .exportdiv{margin-left: 0;}
 #homeButtonGroup div:not(:last-child){border-right: 1px solid;}
-#homeButtonGroup{border-bottom:1px solid #3f51b5 ;}
+#homeButtonGroup, .exportdiv{border-bottom:1px solid #3f51b5 ;}

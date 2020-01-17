@@ -18,37 +18,49 @@ export class DatagridTableComponent implements OnInit {
   }
   
   constructor(private defaultService: DefaultServiceService) { 
-    this.defaultService.subsVar = this.defaultService.invokeFirstComponentFunction.subscribe((name: string) => {
-      let id = this.defaultService.getPartnerId();
-      this.getTableData(id);
+    this.defaultService.subsVar = this.defaultService.callFilterFunction.subscribe((name: string) => {
+      // let id = this.defaultService.getPartnerId();
+      this.getTableData(284, null);
+    });
+
+    this.defaultService.reSubsVar = this.defaultService.resetFilterFunction.subscribe((name: string) => {
+      // let id = this.defaultService.getPartnerId();
+      this.getTableData(284, true);
     });
 
   }
   data: any;
   newFlag  : any = false;
+  noDataValue: any = "No Data Available";
   ngOnInit() {
 
-    this.getTableData(284);
+    this.getTableData(284, true);
   }
 
-  getTableData(partnerId){
+  getTableData(partnerId, firstTime){
     document.documentElement.setAttribute('style','cursor:wait');
     this.table.tableRows = [];
-    this.defaultService.getMonat(partnerId).subscribe(response =>{
+    this.defaultService.getMonat(partnerId, firstTime).subscribe(response =>{
       this.data = response;
       let row = [];
       if(!this.data.value){
       this.data.forEach(element => {
         row.push({partnerId: element.partner_id_fk, kpiGruppeId: element.kpiGruppeId, depotnr:element.depotnr,kpiTypId: element.kpiTypId ,rows:[element.kpiGruppeBezeichnung,element.wertJanuar,element.wertFebruar,element.wertMaerz,element.wertApril,element.wertMai,element.wertJuni,element.wertJuli,element.wertAugust,element.wertSeptember,element.wertOktober,element.wertNovember,element.wertDezember,element.wertQ1,element.wertQ2,element.wertQ3,element.wertQ4, element.wertMonatBest, element.wertMonatZiel ] });
       });
+    }else{
+      this.noDataValue = this.data.value;
     }
       document.documentElement.setAttribute('style','cursor:auto');
       this.table.tableRows = row;
       this.newFlag = this.table.tableRows.length ? false : true;
+    },
+    error =>{
+      this.newFlag = this.table.tableRows.length ? false : true;
+      setTimeout(function(){
+        document.documentElement.setAttribute('style','cursor:auto');
+      },2000);
     });
-    setTimeout(function(){
-      document.documentElement.setAttribute('style','cursor:auto');
-    },2000);
+    
   }
   //Method for Expand all
   expandAll(){
