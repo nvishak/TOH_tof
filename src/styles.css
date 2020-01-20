@@ -8,3 +8,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* #datePicker .mat-form-field-flex{ width: 220px;} */
 #filterCards .mat-card-header-text{ margin: 0;}
 #datePicker .mat-datepicker-toggle button { font-size: 22px;}
+div#mat-tab-label-0-2 {color: black;}
+#disabledHorizontalScroll .mat-sidenav-content{overflow-y: auto;overflow-x: hidden;}
+#mat-tab-content-0-0 .disableHorizontal{overflow-x: hidden;}
+#mat-tab-content-0-0 .mat-tab-body-content{
+    overflow-x: hidden;
+    overflow-y: auto;
+}

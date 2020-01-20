@@ -1,9 +1,9 @@
 <div>
     <br>
-      <div class="container">
-          <div class="container">
-            <mat-tab-group >
-                <mat-tab label="Module">
+    <div class="container">
+        <div class="container">
+            <mat-tab-group>
+                <mat-tab label="Module" class="disableHorizontal">
                     <div id="homeButtonGroup" class="row p-2 ">
                         <div class="btn btn-sm  d-inline-block homeButtons mr-2">
                             Home
@@ -18,41 +18,42 @@
 
                     <div>
                         <!-- Excel Export block -->
-                        <div class="row exportdiv  mb-3" >
-                            <div [ngClass]="disableExport ? 'disablePointer': 'enablePointer'" >
-                                <img src="../../assets/excel.png" (click)="export()" [ngClass]="disableExport ? 'disableclick': ''" >
+                        <div class="row exportdiv  mb-3">
+                            <div [ngClass]="disableExport ? 'disablePointer': 'enablePointer'">
+                                <img src="../../assets/excel.png" (click)="export()"
+                                    [ngClass]="disableExport ? 'disableclick': ''">
                                 <!-- <button (click)="export()">Excel Export</button> -->
                             </div>
-                    
+
                         </div>
                     </div>
-                        <!-- Table Components -->
-    <div class="row">
-        <!-- Left Table -->
-        <div class=" col-lg-9 col-md-9 border" #epltable>
-            <app-datagrid-table></app-datagrid-table>
-        </div>        
-        <!-- Right Table -->
-        <div class="col-lg-3 col-md-3">
-            <app-filters [mainFilterData]="mainFilterObject"></app-filters>
-        </div>
-    </div>    
+                    <!-- Table Components -->
+                    <div class="row">
+                        <!-- Left Table -->
+                        <div class=" col-lg-9 col-md-9 border" #epltable>
+                            <app-datagrid-table></app-datagrid-table>
+                        </div>
+                        <!-- Right Table -->
+                        <div class="col-lg-3 col-md-3">
+                            <app-filters [mainFilterData]="mainFilterObject"></app-filters>
+                        </div>
+                    </div>
                 </mat-tab>
                 <mat-tab label="Info">
-                <h1>The Application Version is:- {{version.value}}</h1>
-                  <!-- <p>...</p> -->
+                    <h1>The Application Version is:- {{version.value}}</h1>
+                    <!-- <p>...</p> -->
                 </mat-tab>
                 <div id="time"></div>
-                <mat-tab  [label]='currentTime' [disabled]="true">
+                <mat-tab [label]='currentTime' [disabled]="true">
                 </mat-tab>
             </mat-tab-group>
 
-          </div> 
-      </div>
-      <br>
-      <div class="container">
-      </div>
-  </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+    </div>
+</div>
 
 <div class="blocks">
     <!-- <div class="row border-dark border-bottom">
@@ -61,7 +62,7 @@
 
   
   </div> -->
-  
+
 
     <!-- Tabs Block -->
 </div>
