@@ -30,11 +30,12 @@
                     <!-- Table Components -->
                     <div class="row">
                         <!-- Left Table -->
-                        <div class=" col-lg-9 col-md-9 border" #epltable>
+                        <div class=" col-lg-12 col-md-12 border" #epltable>
                             <app-datagrid-table></app-datagrid-table>
                         </div>
                         <!-- Right Table -->
-                        <div class="col-lg-3 col-md-3">
+                        <span (click)="openFilters()" id="setting"><i class="fas fa-filter"></i></span>
+                        <div class="col-lg-3 col-md-3 rightNavBar" id="rightNavBar">
                             <app-filters [mainFilterData]="mainFilterObject"></app-filters>
                         </div>
                     </div>

@@ -13,9 +13,9 @@
 }
 
 #filterOptions {
-  max-height: 600px;
+  /* max-height: 600px;
   height: 600px;
-  overflow-y: auto;
+  overflow-y: auto; */
   padding: 10px;
 }
 
@@ -41,4 +41,5 @@
   }
 
 .selectedRegion{ background-color: #ff901d6b;}
+.centerPosition{margin-top: 8rem;}
  

@@ -36,3 +36,21 @@
     opacity: 0.5;
 }
 .enablePointer{ cursor: pointer;}
+.rightNavBar{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -30;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+span#setting{
+    position: fixed;
+    right: 1%;
+    transition: 0.5s;
+    top: 28%;
+    font-size: 26px;
+}
