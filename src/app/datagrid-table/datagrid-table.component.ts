@@ -53,9 +53,11 @@ export class DatagridTableComponent implements OnInit {
       document.documentElement.setAttribute('style','cursor:auto');
       this.table.tableRows = row;
       this.newFlag = this.table.tableRows.length ? false : true;
+      this.defaultService.updateExportClass(this.newFlag);
     },
     error =>{
       this.newFlag = this.table.tableRows.length ? false : true;
+      this.defaultService.updateExportClass(this.newFlag);
       setTimeout(function(){
         document.documentElement.setAttribute('style','cursor:auto');
       },2000);

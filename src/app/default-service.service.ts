@@ -14,9 +14,11 @@ export class DefaultServiceService {
     
   subsVar: Subscription;
   reSubsVar: Subscription;
+  exportVar: Subscription;
   invokeFirstComponentFunction = new EventEmitter();  
   callFilterFunction = new EventEmitter();  
   resetFilterFunction = new EventEmitter();  
+  updateExportButton = new EventEmitter();
   PartnerId: any;
   kpiGroupValue:any;
   kpiSetValue:any;
@@ -96,5 +98,9 @@ export class DefaultServiceService {
   filerClick() {    
     this.callFilterFunction.emit();
   } 
+
+  updateExportClass(value){
+    this.updateExportButton.emit(value);
+  }
 
 }

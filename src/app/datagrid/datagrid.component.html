@@ -18,9 +18,9 @@
 
                     <div>
                         <!-- Excel Export block -->
-                        <div class="row exportdiv  mb-3">
-                            <div (click)="export()">
-                                <img src="../../assets/excel.png">
+                        <div class="row exportdiv  mb-3" >
+                            <div [ngClass]="disableExport ? 'disablePointer': 'enablePointer'" >
+                                <img src="../../assets/excel.png" (click)="export()" [ngClass]="disableExport ? 'disableclick': ''" >
                                 <!-- <button (click)="export()">Excel Export</button> -->
                             </div>
                     
@@ -29,7 +29,7 @@
                         <!-- Table Components -->
     <div class="row">
         <!-- Left Table -->
-        <div class=" col-lg-9 col-md-9 border">
+        <div class=" col-lg-9 col-md-9 border" #epltable>
             <app-datagrid-table></app-datagrid-table>
         </div>        
         <!-- Right Table -->

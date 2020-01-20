@@ -16,7 +16,7 @@
 .lineHeightClass ul li{cursor: pointer;}
 .lineHeightClass ul li a{ padding: 10px;}
 .exportdiv{padding: 10px;}
-.exportdiv img {width: 30px; cursor: pointer;}
+.exportdiv img {width: 30px;}
 
 .homeButtons{ font-size: 14px; color: #ef8e29;font-weight: 500; letter-spacing: 0.5px;}
 /* #homeButtonGroup{background-color: #93A0A6;} */
@@ -28,3 +28,11 @@
 #homeButtonGroup, .exportdiv{margin-left: 0;}
 #homeButtonGroup div:not(:last-child){border-right: 1px solid;}
 #homeButtonGroup, .exportdiv{border-bottom:1px solid #3f51b5 ;}
+.disablePointer{
+    cursor: not-allowed;
+}
+.disableclick{
+    pointer-events: none;
+    opacity: 0.5;
+}
+.enablePointer{ cursor: pointer;}

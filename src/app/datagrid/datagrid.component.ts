@@ -1,13 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DefaultServiceService } from '../default-service.service';
+import * as xlsx from 'xlsx';
+
 @Component({
   selector: 'app-datagrid',
   templateUrl: './datagrid.component.html',
   styleUrls: ['./datagrid.component.css']
 })
 export class DatagridComponent implements OnInit {
+  @ViewChild('epltable', { static: false }) epltable: ElementRef;
 
-  constructor(private defaultService: DefaultServiceService) { }
+  constructor(private defaultService: DefaultServiceService) { 
+    this.defaultService.exportVar = this.defaultService.updateExportButton.subscribe((value: boolean) => {
+      this.disableExport = value;
+    });
+  }
   time = new Date();
   timer;
   currentTime;
@@ -16,9 +23,9 @@ export class DatagridComponent implements OnInit {
     kpiSets: []
   };
   version: any = {
-    value:''
+    value: ''
   };
-
+  disableExport: boolean = false;
   ngOnInit() {
     this.timer = setInterval(() => {
       this.time = new Date();
@@ -32,13 +39,13 @@ export class DatagridComponent implements OnInit {
     //   this.mainFilterObject.kpiSets = data;
     // });
 
-    this.defaultService.getVersion().subscribe(data => {       
+    this.defaultService.getVersion().subscribe(data => {
       this.version = data;
     });
 
   }
 
-  
+
 
   ngOnDestroy() {
     clearInterval(this.timer);
@@ -46,6 +53,10 @@ export class DatagridComponent implements OnInit {
 
   //Export Method
   export() {
-    console.log("Export Method");
+    const ws: xlsx.WorkSheet =
+    xlsx.utils.table_to_sheet(this.epltable.nativeElement);
+    const wb: xlsx.WorkBook = xlsx.utils.book_new();
+    xlsx.utils.book_append_sheet(wb, ws, 'Sheet1');
+    xlsx.writeFile(wb, 'tableExport.xlsx');
   }
 }
