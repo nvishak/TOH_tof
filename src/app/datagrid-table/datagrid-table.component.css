@@ -71,3 +71,12 @@ table tbody tr td{
     vertical-align: top;
     color: #212529;
 }
+.pull-right{
+    float: right;
+}
+.setting-button{
+    margin-bottom: 5px;
+}
+.setting-button span{
+    padding-bottom: 10px;
+}

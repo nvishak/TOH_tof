@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild } from '@angular/core';
 import { DefaultServiceService } from '../default-service.service';
+import {MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
   selector: 'app-datagrid-table',
@@ -7,6 +8,8 @@ import { DefaultServiceService } from '../default-service.service';
   styleUrls: ['./datagrid-table.component.css']
 })
 export class DatagridTableComponent implements OnInit {
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+
   table = {
     tableHeaders :['Name','January','February','March','April','May', 'June','July','August','September','October','November','December','Q1', 'Q2', 'Q3', 'Q4', 'Best', 'Ziel'],
     tableRows: [
@@ -16,6 +19,8 @@ export class DatagridTableComponent implements OnInit {
       // ['...','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856']
     ]
   }
+
+  disableExport: boolean = false;
   
   constructor(private defaultService: DefaultServiceService) { 
     this.defaultService.subsVar = this.defaultService.callFilterFunction.subscribe((name: string) => {
@@ -28,13 +33,24 @@ export class DatagridTableComponent implements OnInit {
       this.getTableData(284, true);
     });
 
+    this.defaultService.exportVar = this.defaultService.updateExportButton.subscribe((value: boolean) => {
+      this.disableExport = value;
+    });
+
   }
   data: any;
   newFlag  : any = false;
   noDataValue: any = "No Data Available";
+  version: any = {
+    value: ''
+  };
   ngOnInit() {
 
     this.getTableData(284, true);
+
+    this.defaultService.getVersion().subscribe(data => {
+      this.version = data;
+    });
   }
 
   getTableData(partnerId, firstTime){
@@ -77,5 +93,10 @@ export class DatagridTableComponent implements OnInit {
    //Method for columnWidth
    columnWidth(){
     console.log("Call columnWidth Apis");
+  }
+
+  showInfor(){
+
+    
   }
 }
