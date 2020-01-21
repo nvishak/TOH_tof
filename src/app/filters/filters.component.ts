@@ -135,6 +135,7 @@ export class FiltersComponent implements OnInit {
     
       this.defaultService.setFilterData(this.selectedGroup, this.selectedKpi, 0, this.selectedDepot);
       this.defaultService.filerClick();
+      this.closeModal();
   }
 
   resetFilterData() {
@@ -147,8 +148,13 @@ export class FiltersComponent implements OnInit {
     this.selectedArray[this.previousSelected] = false;
     this.previousSelected = -1;
     this.defaultService.resetFilterData();
+    this.closeModal();
   }
 
+  closeModal(){
+      document.getElementById("rightNavBar").style.width = "0";
+      document.getElementById("rightNavBar").style.right = "-30px";
+  }
 
 
 }

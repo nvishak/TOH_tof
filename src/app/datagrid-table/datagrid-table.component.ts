@@ -8,7 +8,7 @@ import {MatMenuTrigger} from '@angular/material/menu';
   styleUrls: ['./datagrid-table.component.css']
 })
 export class DatagridTableComponent implements OnInit {
-  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+  // @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   table = {
     tableHeaders :['Name','January','February','March','April','May', 'June','July','August','September','October','November','December','Q1', 'Q2', 'Q3', 'Q4', 'Best', 'Ziel'],
@@ -44,8 +44,8 @@ export class DatagridTableComponent implements OnInit {
   version: any = {
     value: ''
   };
+  pages = [1];
   ngOnInit() {
-
     this.getTableData(284, true);
 
     this.defaultService.getVersion().subscribe(data => {
@@ -55,8 +55,8 @@ export class DatagridTableComponent implements OnInit {
 
   getTableData(partnerId, firstTime){
     document.documentElement.setAttribute('style','cursor:wait');
+    this.defaultService.getMonat(partnerId, firstTime).subscribe(response =>{      
     this.table.tableRows = [];
-    this.defaultService.getMonat(partnerId, firstTime).subscribe(response =>{
       this.data = response;
       let row = [];
       if(!this.data.value){
@@ -95,8 +95,16 @@ export class DatagridTableComponent implements OnInit {
     console.log("Call columnWidth Apis");
   }
 
-  showInfor(){
-
+  showInfo(){
+    console.log("Call info Apis");
     
+  }
+  export(){
+
+  }
+
+  openFilters(){
+    document.getElementById("rightNavBar").style.width = "25%";
+    document.getElementById("rightNavBar").style.right = "0";
   }
 }

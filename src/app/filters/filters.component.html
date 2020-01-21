@@ -1,62 +1,38 @@
+<div class="closeButton" (click)=closeModal()><i class="fas fa-times"></i></div>
 <div class="centerPosition">
-    <div id="filterButton" class="border border-secondary mb-3 mt-3 ">
-        <div class="btn btn-light btn-md d-block" (click)="filterData()">
+    <div id="filterButton" class="border border-secondary col-lg-12 col-md-12 text-center">
+        <div class="btn btn-warning btn-md" (click)="filterData()">
             Filter
         </div>
 
-        <div class="btn btn-light btn-md d-block mt-2" style="width: 50%;" (click)="resetFilterData()">
+        <div class="btn btn-warning btn-md"  (click)="resetFilterData()">
             Loschen
         </div>
     </div>
+    <hr style="color: black;">
 
 
     <div id="filterOptions">
-        <div *ngFor="let item of filterOptions" class="border border-secondary mb-3">
-            <!-- <div class="filterHeaders"> -->
-            <mat-card>
-                <mat-card-header id="filterCards">
-                    <!-- <mat-card-title>{{item.text}}</mat-card-title> -->
-
-                    <span>{{item.text}}</span>
-                    <!-- </div> -->
-                </mat-card-header>
-                <mat-card-content>
-
-                    <div class="text-center p-3 filterBody" [ngSwitch]="item.type">
-                        <!-- <input type="date" name="item.text" placeholder="Datepicker" *ngSwitchCase="'date'"> -->
-                        <div *ngSwitchCase="'date'">
-                            <app-datepicker (selectedDate)="method($event)"></app-datepicker>
-                        </div>
-
-                        <input type="text" name="item.text" [placeholder]="item.placeHolder" *ngSwitchCase="'text'">
-                        <!-- <div ngbDropdown *ngSwitchCase="'drop'" >
-                <input class="form-control" type="text" [placeholder]="item.placeHolder" ngbDropdownToggle placement="bottom">
-                <div class="dropdownGroup" ngbDropdownMenu >
-                <li *ngFor="let options of item.filters">{{options}}</li>
+        <div *ngFor="let item of filterOptions" class="mb-3">
+            <span>{{item.text}}</span>
+            <div class="text-center p-3 filterBody" [ngSwitch]="item.type">
+                <div *ngSwitchCase="'date'">
+                    <app-datepicker (selectedDate)="method($event)"></app-datepicker>
                 </div>
-            </div> -->
-                        <app-dropdown-search [data]="item" *ngSwitchCase="'drop'"
-                            (selectedOption)="optionSelected($event, item.text)" [bind]='item.bind'>
-                        </app-dropdown-search>
-
-
-                        <input *ngSwitchCase="'selection'" [(ngModel)]="depotBind" type="search" placeholder="Test"
-                            class="form-control">
-                        <ul *ngSwitchCase="'selection'" class="list-group text-left form-control">
-                            <li *ngFor="let list of newArray | filter:depotBind;" class="list-group-item"
-                                (click)="optionSelected(list, item.text)"
-                                [ngClass]="selectedArray[list.depotnr] ? 'selectedRegion' : ''">
-                                {{list.bezeichnung}}</li>
-                        </ul>
-
-                        <!-- 
-                    <mat-list role="list" *ngSwitchCase="'selection'">
-                    <mat-list-item role="listitem" *ngFor="let list of item.filters" (click)="optionSelected(list, item)" >{{list}}</mat-list-item>                    
-                    </mat-list> -->
-
-                    </div>
-                </mat-card-content>
-            </mat-card>
+                <input type="text" name="item.text" [placeholder]="item.placeHolder" *ngSwitchCase="'text'">
+                <app-dropdown-search [data]="item" *ngSwitchCase="'drop'"
+                    (selectedOption)="optionSelected($event, item.text)" [bind]='item.bind'>
+                </app-dropdown-search>
+                <input *ngSwitchCase="'selection'" [(ngModel)]="depotBind" type="search" placeholder="Test"
+                    class="form-control">
+                <ul *ngSwitchCase="'selection'" class="list-group text-left form-control">
+                    <li *ngFor="let list of newArray | filter:depotBind;" class="list-group-item"
+                        (click)="optionSelected(list, item.text)"
+                        [ngClass]="selectedArray[list.depotnr] ? 'selectedRegion' : ''">
+                        {{list.bezeichnung}}</li>
+                </ul>
+            </div>
+            <hr class="border-dark">
         </div>
     </div>
 </div>
