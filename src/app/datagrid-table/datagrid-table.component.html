@@ -1,26 +1,42 @@
 <div>
-    <div>
-        <h5>Depot Monats KPIs</h5>
-    </div>
-    <div class="borderClass" id="tableMethods">
-        <span class="btn-link pl-2 pr-2 borderRight" (click)="expandAll()">Alles aufklappen</span>
-        <span class="btn-link pl-2 pr-2 borderRight" (click)="collapseAll()">Alles zuklappen</span>
-        <span class="btn-link pl-2 pr-2" (click)="columnWidth()">Spaltenbreite</span>
-    </div>
-    <div class="data-table borderBottom borderRight borderLeft">
-        <table class="table">
-            <thead>
-                <tr>
-                <th *ngFor="let header of table.tableHeaders; let num = index" class="borderBottom borderRight">{{header}}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let row of table.tableRows">
-                    <td *ngFor="let data of row.rows">{{data}}</td>
-                </tr>
-                <tr id="noData" *ngIf="newFlag"><td colspan='100'>{{noDataValue}}</td></tr>
-            </tbody>
+    <mat-card>
+        <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <h5>Depot Monats KPIs</h5>
+                </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="pull-right">
+                    <span class="fill-space"></span>
+                    <button class="pull-right setting-button" mat-button [matMenuTriggerFor]="beforeMenu">Settings</button>
+                    <mat-menu #beforeMenu="matMenu" xPosition="before">
+                        <button mat-menu-item [ngClass]="disableExport ? 'disablePointer': 'enablePointer'" (click)="export()"
+                        [ngClass]="disableExport ? 'disableclick': ''">Export</button>
+                        <button mat-menu-item (click)="expandAll()">Alles aufklappen</button>
+                        <button mat-menu-item (click)="collapseAll()">Alles zuklappen</button>
+                        <button mat-menu-item (click)="columnWidth()">Spaltenbreite</button>
+                        <button mat-menu-item (click)="showInfo()">Info</button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
 
-        </table>
-    </div>
-</div>
+        <div class="data-table borderBottom borderRight borderLeft">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th *ngFor="let header of table.tableHeaders; let num = index" class="borderBottom borderRight">
+                            {{header}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of table.tableRows">
+                        <td *ngFor="let data of row.rows">{{data}}</td>
+                    </tr>
+                    <tr id="noData" *ngIf="newFlag">
+                        <td colspan='100'>{{noDataValue}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </mat-card>

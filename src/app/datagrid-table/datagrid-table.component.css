@@ -55,3 +55,12 @@ table tbody tr td{
     height: 670px;
     width: 100%;
 }
+.pull-right{
+    float: right;
+}
+.setting-button{
+    margin-bottom: 5px;
+}
+.setting-button span{
+    padding-bottom: 10px;
+}

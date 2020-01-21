@@ -9,12 +9,8 @@ import * as xlsx from 'xlsx';
 })
 export class DatagridComponent implements OnInit {
   @ViewChild('epltable', { static: false }) epltable: ElementRef;
-
-  constructor(private defaultService: DefaultServiceService) { 
-    this.defaultService.exportVar = this.defaultService.updateExportButton.subscribe((value: boolean) => {
-      this.disableExport = value;
-    });
-  }
+  constructor(private defaultService: DefaultServiceService) { }
+  
   time = new Date();
   timer;
   currentTime;
@@ -25,7 +21,7 @@ export class DatagridComponent implements OnInit {
   version: any = {
     value: ''
   };
-  disableExport: boolean = false;
+  
   filterActive: boolean = false;
   ngOnInit() {
     this.timer = setInterval(() => {
