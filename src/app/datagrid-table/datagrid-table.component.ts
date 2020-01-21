@@ -110,7 +110,8 @@ export class DatagridTableComponent implements OnInit {
   }
 
   openFilters(){
-    document.getElementById("rightNavBar").style.width = "25%";
+    document.getElementById("rightNavBar").style.width = "16%";
     document.getElementById("rightNavBar").style.right = "0";
+    document.getElementById("mainBody").style.marginRight = '15%';
   }
 }

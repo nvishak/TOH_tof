@@ -1,6 +1,5 @@
 import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { DefaultServiceService } from '../default-service.service';
-
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
@@ -154,6 +153,7 @@ export class FiltersComponent implements OnInit {
   closeModal(){
       document.getElementById("rightNavBar").style.width = "0";
       document.getElementById("rightNavBar").style.right = "-30px";
+      document.getElementById("mainBody").style.marginRight = '0';
   }
 
 
