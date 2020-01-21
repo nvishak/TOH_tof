@@ -3,7 +3,7 @@
 
 html, body { height: 100%;}
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Roboto", "Arial","Helvetia cNeue", sans-serif; }
 /* #datePicker .mat-form-field-infix{width: 220px;} */
 /* #datePicker .mat-form-field-flex{ width: 220px;} */
 #filterCards .mat-card-header-text{ margin: 0;}

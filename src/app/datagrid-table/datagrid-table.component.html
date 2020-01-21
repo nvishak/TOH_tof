@@ -8,17 +8,23 @@
         <span class="btn-link pl-2 pr-2" (click)="columnWidth()">Spaltenbreite</span>
     </div>
     <div class="data-table borderBottom borderRight borderLeft">
-        <table class="table">
+        <table class="table tabble-responsive">
             <thead>
                 <tr>
-                <th *ngFor="let header of table.tableHeaders; let num = index" class="borderBottom borderRight">{{header}}</th>
+                    <th *ngFor="let header of table.tableHeaders; let num = index" class="borderBottom borderRight">
+                        <span>
+                            {{header}}
+                        </span>
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let row of table.tableRows">
                     <td *ngFor="let data of row.rows">{{data}}</td>
                 </tr>
-                <tr id="noData" *ngIf="newFlag"><td colspan='100'>{{noDataValue}}</td></tr>
+                <tr id="noData" *ngIf="newFlag">
+                    <td colspan='100'>{{noDataValue}}</td>
+                </tr>
             </tbody>
 
         </table>

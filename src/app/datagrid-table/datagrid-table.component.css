@@ -55,3 +55,19 @@ table tbody tr td{
     height: 670px;
     width: 100%;
 }
+
+.table{line-height: 1.5em;}
+.table th{
+    font-size: 0.875em;
+    margin: 0;
+    padding: .5em 1em;
+    font-weight: 700;
+    vertical-align: bottom;
+}
+.table td{
+    font-size: 0.875em;
+    margin: 0;
+    padding: .5em 1em;
+    vertical-align: top;
+    color: #212529;
+}
