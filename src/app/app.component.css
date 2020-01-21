@@ -50,4 +50,5 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     margin: 0;
     width: 85%;
   }
-  
+  .accountSettings{font-size: 24px;}
+  a img{height: 85%;}

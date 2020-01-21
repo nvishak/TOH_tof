@@ -27,7 +27,7 @@
 }
 #homeButtonGroup, .exportdiv{margin-left: 0;}
 #homeButtonGroup div:not(:last-child){border-right: 1px solid;}
-#homeButtonGroup, .exportdiv{border-bottom:1px solid #3f51b5 ;}
+/* #homeButtonGroup, .exportdiv{border-bottom:1px solid #3f51b5 ;} */
 .disablePointer{
     cursor: not-allowed;
 }
@@ -63,3 +63,7 @@ span#setting{
     width: 100%;
     text-align: center; 
 }
+/* .datagridBorder{
+    border-top: 1px solid #3f51b5;
+    padding: 0px;
+} */

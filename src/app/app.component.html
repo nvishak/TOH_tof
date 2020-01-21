@@ -34,11 +34,12 @@
         <mat-icon>menu</mat-icon>
       </button>
     </div>
-<!--      <div>
+     <div>
        <a>
-          <h1>tof</h1>
+          <!-- <h1>tof</h1> -->
+          <img src="../assets/logo.png" alt="Tof">
        </a>
-     </div> -->
+     </div>
      <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
         <ul fxLayout fxLayoutGap="20px" class="navigation-items">
           <li style="font-size: 16px;">          
@@ -51,6 +52,15 @@
               </a>
             </li> -->
             <li>
+              <a>
+                <button mat-button [matMenuTriggerFor]="menu" class="accountSettings"><span><i class="fas fa-user-cog"></i></span></button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item><mat-icon class="icon">security</mat-icon> Password</button>
+                    <button mat-menu-item><mat-icon class="icon">input</mat-icon> LogOut</button>
+                  </mat-menu>
+              </a>
+            </li>
+            <!-- <li>
                 <a>
                     <mat-icon class="icon">security</mat-icon>
                     <span class="label">Password</span>
@@ -61,7 +71,7 @@
                   <mat-icon class="icon">input</mat-icon>
                   <span class="label">LogOut</span>
                  </a>
-            </li>
+            </li> -->
         </ul>
      </div>
     </mat-toolbar>

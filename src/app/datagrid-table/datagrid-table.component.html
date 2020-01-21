@@ -1,7 +1,7 @@
 <mat-card>
     <div class="row">
         <div class="col-lg-6 col-md-6">
-            <h5>Depot Monats KPIs</h5>
+            <h5>Dashboard > Depot Monats KPIs</h5>
         </div>
         <div class="col-lg-6 col-md-6">
             <div class="pull-right" id='datagridSettings'>
@@ -15,14 +15,14 @@
                     <button mat-menu-item (click)="expandAll()"><span class="settingsIcon"><i class="fas fa-expand-alt"></i></span>Alles aufklappen</button>
                     <button mat-menu-item (click)="collapseAll()"><span class="settingsIcon"><i class="fas fa-compress-alt"></i></span>Alles zuklappen</button>
                     <button mat-menu-item (click)="columnWidth()"><span class="settingsIcon"><i class="fas fa-arrows-alt-h"></i></span>Spaltenbreite</button>
-                    <button mat-menu-item (click)="showInfo()"><span class="settingsIcon"><i class="fas fa-info-circle"></i></span>Info</button>
+                    <button mat-menu-item data-toggle="modal" data-target="#infoModal"><span class="settingsIcon"><i class="fas fa-info-circle"></i></span>Info</button>
                 </mat-menu>
             </div>
         </div>
     </div>
 
-    <div class="data-table borderBottom borderRight borderLeft">
-        <table class="table">
+    <div class="data-table borderBottom borderRight borderLeft" #epltable>
+        <table class="table" >
             <thead>
                 <tr>
                     <th *ngFor="let header of table.tableHeaders; let num = index" class="borderBottom borderRight">
@@ -60,4 +60,23 @@
 
         </nav>
     </div>
+
+    
+
 </mat-card>
+
+
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+            The Application Version is - {{version.value}}
+        </div>
+        <div class="modal-footer justify-content-center border-top-0">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px;">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

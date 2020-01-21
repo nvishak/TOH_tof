@@ -1,6 +1,7 @@
-import { Component, OnInit ,ViewChild } from '@angular/core';
+import { Component, OnInit ,ViewChild, ElementRef } from '@angular/core';
 import { DefaultServiceService } from '../default-service.service';
 import {MatMenuTrigger} from '@angular/material/menu';
+import * as xlsx from 'xlsx';
 
 @Component({
   selector: 'app-datagrid-table',
@@ -8,6 +9,8 @@ import {MatMenuTrigger} from '@angular/material/menu';
   styleUrls: ['./datagrid-table.component.css']
 })
 export class DatagridTableComponent implements OnInit {
+  
+  @ViewChild('epltable', { static: false }) epltable: ElementRef;
   // @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   table = {
@@ -97,10 +100,13 @@ export class DatagridTableComponent implements OnInit {
 
   showInfo(){
     console.log("Call info Apis");
-    
   }
   export(){
-
+    const ws: xlsx.WorkSheet =
+    xlsx.utils.table_to_sheet(this.epltable.nativeElement);
+    const wb: xlsx.WorkBook = xlsx.utils.book_new();
+    xlsx.utils.book_append_sheet(wb, ws, 'Sheet1');
+    xlsx.writeFile(wb, 'exportCSV.xlsx');
   }
 
   openFilters(){

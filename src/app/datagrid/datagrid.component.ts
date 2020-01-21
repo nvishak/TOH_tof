@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DefaultServiceService } from '../default-service.service';
-import * as xlsx from 'xlsx';
+// import * as xlsx from 'xlsx';
 
 @Component({
   selector: 'app-datagrid',
@@ -8,7 +8,7 @@ import * as xlsx from 'xlsx';
   styleUrls: ['./datagrid.component.css']
 })
 export class DatagridComponent implements OnInit {
-  @ViewChild('epltable', { static: false }) epltable: ElementRef;
+  // @ViewChild('epltable', { static: false }) epltable: ElementRef;
   constructor(private defaultService: DefaultServiceService) { }
   
   time = new Date();
@@ -54,13 +54,13 @@ export class DatagridComponent implements OnInit {
   }
 
   //Export Method
-  export() {
-    const ws: xlsx.WorkSheet =
-    xlsx.utils.table_to_sheet(this.epltable.nativeElement);
-    const wb: xlsx.WorkBook = xlsx.utils.book_new();
-    xlsx.utils.book_append_sheet(wb, ws, 'Sheet1');
-    xlsx.writeFile(wb, 'exportCSV.xlsx');
-  }
+  // export() {
+  //   const ws: xlsx.WorkSheet =
+  //   xlsx.utils.table_to_sheet(this.epltable.nativeElement);
+  //   const wb: xlsx.WorkBook = xlsx.utils.book_new();
+  //   xlsx.utils.book_append_sheet(wb, ws, 'Sheet1');
+  //   xlsx.writeFile(wb, 'exportCSV.xlsx');
+  // }
   // openFilters(){
   //   if(!this.filterActive){
   //   this.filterActive = true;
