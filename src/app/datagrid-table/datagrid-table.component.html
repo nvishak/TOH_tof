@@ -11,11 +11,11 @@
                 <button class="pull-right setting-button" mat-button (click)="openFilters()"><span class="settingsIcon"><i class="fas fa-filter"></i></span>Filter</button>
                 <mat-menu #beforeMenu="matMenu" xPosition="before">
                     <button mat-menu-item [ngClass]="disableExport ? 'disablePointer': 'enablePointer'"
-                        (click)="export()" [ngClass]="disableExport ? 'disableclick': ''">Export</button>
-                    <button mat-menu-item (click)="expandAll()">Alles aufklappen</button>
-                    <button mat-menu-item (click)="collapseAll()">Alles zuklappen</button>
-                    <button mat-menu-item (click)="columnWidth()">Spaltenbreite</button>
-                    <button mat-menu-item (click)="showInfo()">Info</button>
+                        (click)="export()" [ngClass]="disableExport ? 'disableclick': ''"><span class="settingsIcon"><i class="fas fa-file-export"></i></span>Export</button>
+                    <button mat-menu-item (click)="expandAll()"><span class="settingsIcon"><i class="fas fa-expand-alt"></i></span>Alles aufklappen</button>
+                    <button mat-menu-item (click)="collapseAll()"><span class="settingsIcon"><i class="fas fa-compress-alt"></i></span>Alles zuklappen</button>
+                    <button mat-menu-item (click)="columnWidth()"><span class="settingsIcon"><i class="fas fa-arrows-alt-h"></i></span>Spaltenbreite</button>
+                    <button mat-menu-item (click)="showInfo()"><span class="settingsIcon"><i class="fas fa-info-circle"></i></span>Info</button>
                 </mat-menu>
             </div>
         </div>
