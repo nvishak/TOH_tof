@@ -1,16 +1,8 @@
-/* #filterButton {
-  background-color: #EF8E29;
-  padding: 10px;
-} */
 
 .filterHeaders {
   background-color: lightgray;
   font-weight: bold;
 }
-
-/* .filterBody {
-  background-color: #F1F1F1;
-} */
 
 #filterOptions {
   max-height: 600px;
@@ -22,27 +14,12 @@
 #filterOptions li{ padding: 5px; border: 0; cursor: pointer;}
 
 #filterOptions ul.list-group.text-left {max-height: 20%;overflow-y: auto; min-height: 19%;}
-/* .dropdownGroup{
-    max-height: 150px; overflow-y: auto;
-    -ms-overflow-style: none;
-    width: 100%;
-}
-.dropdownGroup::-webkit-scrollbar{
-    display: none;
-} */
-  /* @media screen and (max-width: 1599px) {
-    input {
-      width: 130px;
-    }
-  } */
 
   mat-card{
     padding: 5px;
   }
 
 .selectedRegion{ background-color: #ff901d6b;}
-/* .centerPosition{margin-top: 7.5rem;} */
-
 
 #filterOptions span{
   font-weight: 700;

@@ -1,8 +1,4 @@
-/* nav {
-    height: 50px;
-    background-color: #004473;
-}
-nav img { height: 40px; width: 60px;} */
+
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     height: 100%;
   }

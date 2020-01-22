@@ -53,10 +53,6 @@ export class DefaultServiceService {
         if(value)
           params = params.set(key, value);
       });
-    // .set('kpiGruppen[]',this.kpiGroupValue)
-    // .set('kpiSet',this.kpiSetValue)    
-    // .set('depotNrs',this.depotNrsValue)
-    // .set('jahr','2019');
     return this.http.get<Monat>("http://10.221.144.44:8080/tofKpiRS/kpis/depot/monat/" + id, {params: params});
     }else
     {
@@ -98,9 +94,5 @@ export class DefaultServiceService {
   filerClick() {    
     this.callFilterFunction.emit();
   } 
-
-  updateExportClass(value){
-    this.updateExportButton.emit(value);
-  }
 
 }
