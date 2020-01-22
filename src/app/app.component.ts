@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DefaultServiceService } from './default-service.service';
+import { Router  } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,14 @@ export class AppComponent {
   timer: any;
   currentTime:any;
   time:any;
+  hideSettings:boolean = false;
+
+  constructor(private defaultService: DefaultServiceService, private router:Router){
+    this.defaultService.settingsvar = this.defaultService.settingsEmit.subscribe((flag: boolean) => {
+      this.hideSettings = flag;
+    });
+  }
+
   ngOnInit(){
     this.timer = setInterval(() => {
       this.time = new Date();
@@ -20,5 +30,10 @@ export class AppComponent {
       + this.time.getMinutes() + ":" 
       + this.time.getSeconds();
     }, 1000);
+  }
+
+  logout(){
+    this.defaultService.hideShowSettings(true);    
+    this.router.navigate(['']);
   }
 }
