@@ -33,7 +33,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     LoginComponent,
     DatepickerComponent,
     DropdownSearchComponent,
-    DashboardComponent
+    DashboardComponent,
     PasswordResetComponent
   ],
   imports: [

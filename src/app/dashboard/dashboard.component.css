@@ -1,0 +1,10 @@
+table.fancytree-ext-table {
+    width: 80%;
+ }
+ /* custom alignment (class is set by row template) */
+ td.alignCenter {
+    text-align: center;
+ }
+ td.alignRight {
+    text-align: right;
+ }
