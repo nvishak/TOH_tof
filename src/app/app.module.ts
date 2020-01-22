@@ -21,6 +21,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {MatButtonModule} from '@angular/material/button';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatButtonModule} from '@angular/material/button';
     FiltersComponent,
     LoginComponent,
     DatepickerComponent,
-    DropdownSearchComponent
+    DropdownSearchComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
