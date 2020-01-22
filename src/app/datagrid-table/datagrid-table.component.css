@@ -38,6 +38,7 @@
 }
 .setting-button{
     margin-bottom: 5px;
+    color: #007bff;
 }
 .setting-button span{
     padding-bottom: 10px;
@@ -68,3 +69,4 @@
     background-color: #e9ecef;
 }
 .settingsIcon{margin-right: 6px;}
+.lineBreak{border: 1px solid #dee2e6;}
