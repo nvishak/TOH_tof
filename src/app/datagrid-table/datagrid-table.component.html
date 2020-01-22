@@ -7,8 +7,8 @@
             <div class="pull-right" id='datagridSettings'>
                 <span class="fill-space"></span>
 
-                <button class="pull-right setting-button" mat-button [matMenuTriggerFor]="beforeMenu"><span class="settingsIcon"><i class="fas fa-sliders-h"></i></span >Settings</button>
-                <button class="pull-right setting-button" mat-button (click)="openFilters()"><span class="settingsIcon"><i class="fas fa-filter"></i></span>Filter</button>
+                <a class="pull-right setting-button" mat-button [matMenuTriggerFor]="beforeMenu"><span class="settingsIcon"><i class="fas fa-sliders-h"></i></span >Settings</a>
+                <a class="pull-right setting-button" mat-button (click)="openFilters()"><span class="settingsIcon"><i class="fas fa-filter"></i></span>Filter</a>
                 <mat-menu #beforeMenu="matMenu" xPosition="before">
                     <button mat-menu-item [ngClass]="disableExport ? 'disablePointer': 'enablePointer'"
                         (click)="export()" [ngClass]="disableExport ? 'disableclick': ''"><span class="settingsIcon"><i class="fas fa-file-export"></i></span>Export</button>
