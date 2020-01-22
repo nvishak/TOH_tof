@@ -36,4 +36,11 @@ export class AppComponent {
     this.defaultService.hideShowSettings(true);    
     this.router.navigate(['']);
   }
+
+  password(){
+    this.router.navigate(['Passwordreset']);
+  }
+  logoClick(){
+    this.router.navigate(['Datagrid']);
+  }
 }

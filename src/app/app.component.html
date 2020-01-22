@@ -27,7 +27,7 @@
         </button>
       </div>
       <div>
-        <a>
+        <a (click)="logoClick()">
           <img src="../assets/Untitled.png" alt="Tof">
         </a>
       </div>
@@ -42,7 +42,7 @@
               <button mat-button [matMenuTriggerFor]="menu" class="accountSettings"><span><i
                     class="fas fa-user-cog"></i></span></button>
               <mat-menu #menu="matMenu">
-                <button mat-menu-item><i class="fas fa-shield-alt"></i> Password</button>
+                <button mat-menu-item (click)="password()"><i class="fas fa-shield-alt"></i> Password</button>
                 <button mat-menu-item (click)="logout()"><i class="fas fa-sign-out-alt"></i> LogOut</button>
               </mat-menu>
             </a>
