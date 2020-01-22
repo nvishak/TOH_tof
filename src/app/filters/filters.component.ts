@@ -54,7 +54,8 @@ export class FiltersComponent implements OnInit {
   }
 
   method(event) {
-    console.log(event);
+    const tempDate = new Date(event.value);
+    this.selectedDate = tempDate.getFullYear();
   }
   optionSelected(event, text, index) {
     console.log(event, text);
@@ -86,7 +87,7 @@ export class FiltersComponent implements OnInit {
 
   filterData() {
     
-      this.defaultService.setFilterData(this.selectedGroup, this.selectedKpi, 0, this.selectedDepot);
+      this.defaultService.setFilterData(this.selectedGroup, this.selectedKpi, this.selectedDate, this.selectedDepot);
       this.defaultService.filerClick();
       this.closeModal();
   }

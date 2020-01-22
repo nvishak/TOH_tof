@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {MatButtonModule} from '@angular/material/button';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DatepickerComponent,
     DropdownSearchComponent,
     DashboardComponent
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,

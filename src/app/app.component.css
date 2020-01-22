@@ -48,3 +48,4 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
   }
   .accountSettings{font-size: 24px;}
   a img{height: 85%;}
+  #logoButton{cursor: pointer;}
