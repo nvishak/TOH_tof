@@ -19,7 +19,6 @@
 .exportdiv img {width: 30px;}
 
 .homeButtons{ font-size: 14px; color: #ef8e29;font-weight: 500; letter-spacing: 0.5px;}
-/* #homeButtonGroup{background-color: #93A0A6;} */
 .container{ margin-right: unset;margin-left: unset;max-width: 100%;}
 #time #mat-tab-label-0-2 {
     position: relative;
@@ -27,7 +26,6 @@
 }
 #homeButtonGroup, .exportdiv{margin-left: 0;}
 #homeButtonGroup div:not(:last-child){border-right: 1px solid;}
-/* #homeButtonGroup, .exportdiv{border-bottom:1px solid #3f51b5 ;} */
 .disablePointer{
     cursor: not-allowed;
 }
@@ -63,7 +61,3 @@ span#setting{
     width: 100%;
     text-align: center; 
 }
-/* .datagridBorder{
-    border-top: 1px solid #3f51b5;
-    padding: 0px;
-} */

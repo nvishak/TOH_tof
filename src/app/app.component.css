@@ -1,54 +1,58 @@
-/* nav {
-    height: 50px;
-    background-color: #004473;
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
 }
-nav img { height: 40px; width: 60px;} */
-mat-sidenav-container, mat-sidenav-content, mat-sidenav {
-    height: 100%;
-  }
-  
-  mat-sidenav {
-    width: 250px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  a:hover,
-  a:active {
-    color: lightgray;
-  }
-  
-  .navigation-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    /* cursor: pointer; */
-  }
-  .navigation-items li:first-child{
-    cursor: context-menu;
-  }
-  .navigation-items li:not(:first-child){
-    cursor: pointer;
-  }  
-  
-  .icon {
-    display: inline-block;
-    height: 30px;
-    margin: 0 auto;
-    padding-right: 5px;
-    text-align: center;
-    vertical-align: middle;
-    width: 34%;
-  }
-  
-  .label {
-    display: inline-block;
-    line-height: 30px;
-    margin: 0;
-    width: 85%;
-  }
-  .accountSettings{font-size: 24px;}
-  a img{height: 85%;}
+
+mat-sidenav {
+  width: 250px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: lightgray;
+}
+
+.navigation-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-items li:first-child {
+  cursor: context-menu;
+}
+
+.navigation-items li:not(:first-child) {
+  cursor: pointer;
+}
+
+.icon {
+  display: inline-block;
+  height: 30px;
+  margin: 0 auto;
+  padding-right: 5px;
+  text-align: center;
+  vertical-align: middle;
+  width: 34%;
+}
+
+.label {
+  display: inline-block;
+  line-height: 30px;
+  margin: 0;
+  width: 85%;
+}
+
+.accountSettings {
+  font-size: 24px;
+}
+
+a img {
+  height: 85%;
+}

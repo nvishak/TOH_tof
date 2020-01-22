@@ -1,99 +1,62 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- Navbar-->
 <mat-sidenav-container id="disabledHorizontalScroll">
-  <mat-sidenav  #sidenav role="navigation">
-   <mat-nav-list>
-    <a mat-list-item>
-      <mat-icon class="icon">input</mat-icon>
-      <span class="label">Login</span>
-    </a>
-    <a mat-list-item>
-      <mat-icon class="icon">home</mat-icon>
+  <mat-sidenav #sidenav role="navigation">
+    <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon class="icon">input</mat-icon>
+        <span class="label">Login</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon class="icon">home</mat-icon>
         <span class="label">Home</span>
-    </a>
-    <a mat-list-item>
-      <mat-icon class="icon">dashboard</mat-icon>
-      <span class="label">Dashboard</span>
-    </a>
-    <a  mat-list-item type="button">
-      <mat-icon class="icon">input</mat-icon>
-      <span class="label">LogOut</span>
-    </a>
+      </a>
+      <a mat-list-item>
+        <mat-icon class="icon">dashboard</mat-icon>
+        <span class="label">Dashboard</span>
+      </a>
+      <a mat-list-item type="button">
+        <mat-icon class="icon">input</mat-icon>
+        <span class="label">LogOut</span>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-     <div fxHide.gt-xs>
-       <button mat-icon-button>
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-     <div>
-       <a>
+      <div fxHide.gt-xs>
+        <button mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>
+        <a>
           <!-- <h1>tof</h1> -->
           <img src="../assets/Untitled.png" alt="Tof">
-       </a>
-     </div>
-     <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
+        </a>
+      </div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="20px" class="navigation-items">
-          <li style="font-size: 16px;">          
+          <li style="font-size: 16px;">
             {{currentTime}}
           </li>
-          <!-- <li>
-              <a >
-                  <mat-icon class="icon">home</mat-icon>
-                  <span class="label">Home</span>
-              </a>
-            </li> -->
-            <li>
-              <a>
-                <button mat-button [matMenuTriggerFor]="menu" class="accountSettings"><span><i class="fas fa-user-cog"></i></span></button>
-                  <mat-menu #menu="matMenu">
-                    <button mat-menu-item><mat-icon class="icon">security</mat-icon> Password</button>
-                    <button mat-menu-item><mat-icon class="icon">input</mat-icon> LogOut</button>
-                  </mat-menu>
-              </a>
-            </li>
-            <!-- <li>
-                <a>
-                    <mat-icon class="icon">security</mat-icon>
-                    <span class="label">Password</span>
-                </a>
-              </li>
-            <li>
-                <a>
-                  <mat-icon class="icon">input</mat-icon>
-                  <span class="label">LogOut</span>
-                 </a>
-            </li> -->
+          <li>
+            <a>
+              <button mat-button [matMenuTriggerFor]="menu" class="accountSettings"><span><i
+                    class="fas fa-user-cog"></i></span></button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                  <mat-icon class="icon">security</mat-icon> Password
+                </button>
+                <button mat-menu-item>
+                  <mat-icon class="icon">input</mat-icon> LogOut
+                </button>
+              </mat-menu>
+            </a>
+          </li>
         </ul>
-     </div>
+      </div>
     </mat-toolbar>
     <main>
       <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-  
-
-
-<!-- Toolbar -->
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-

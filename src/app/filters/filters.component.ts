@@ -31,8 +31,6 @@ export class FiltersComponent implements OnInit {
   @Input() mainFilterData: any;
 
   ngOnInit() {
-    // this.filterOptions[1].filters = this.mainFilterData.category;
-    // this.filterOptions[2].filters = this.mainFilterData.kpiSets;
     this.getfilterValues();
 
   }
@@ -52,23 +50,18 @@ export class FiltersComponent implements OnInit {
           temp.push({bezeichnung: this.allPartner[i].bezeichnung, depotnr:this.allPartner[i].depotnr});
         this.selectedArray[this.allPartner[i].depotnr] = false;
       }
-      // this.filterOptions[3].filters = temp.sort();
       this.newArray = temp.sort((a,b) => (a.bezeichnung > b.bezeichnung) ? 1 : ((b.bezeichnung > a.bezeichnung) ? -1 : 0));
     });
   }
 
   method(event) {
     console.log(event);
-    // this.selectedYear = Date.format(event.value);
   }
   optionSelected(event, text, index) {
     console.log(event, text);
     if (text == 'Region' || text == 'Depot') {
 
-      // let temp = this.allPartner.filter(ele => {
-      //   if (ele.bezeichnung == event)
-      //     return ele;
-      // })
+     
       this.selectedDepot = event.depotnr;
       if (this.selectedArray[event.depotnr] != true) {
         this.selectedArray[this.previousSelected] = false;
