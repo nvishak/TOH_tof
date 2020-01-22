@@ -37,14 +37,13 @@
             {{currentTime}}
           </li>
 
-          <li>
+          <li [hidden]="hideSettings">
             <a>
               <button mat-button [matMenuTriggerFor]="menu" class="accountSettings"><span><i
                     class="fas fa-user-cog"></i></span></button>
               <mat-menu #menu="matMenu">
                 <button mat-menu-item><i class="fas fa-shield-alt"></i> Password</button>
-                <button mat-menu-item><i class="fas fa-sign-out-alt"></i> LogOut</button>
-                <button mat-menu-item [routerLink]="['Dashboard']"><i class="fas fa-shield-alt"></i> Dashboard</button>
+                <button mat-menu-item (click)="logout()"><i class="fas fa-sign-out-alt"></i> LogOut</button>
               </mat-menu>
             </a>
           </li>

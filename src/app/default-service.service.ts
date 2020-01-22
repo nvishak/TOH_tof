@@ -15,10 +15,12 @@ export class DefaultServiceService {
   subsVar: Subscription;
   reSubsVar: Subscription;
   exportVar: Subscription;
+  settingsvar: Subscription;
   invokeFirstComponentFunction = new EventEmitter();  
   callFilterFunction = new EventEmitter();  
   resetFilterFunction = new EventEmitter();  
   updateExportButton = new EventEmitter();
+  settingsEmit = new EventEmitter();  
   PartnerId: any;
   kpiGroupValue:any;
   kpiSetValue:any;
@@ -93,6 +95,11 @@ export class DefaultServiceService {
 
   filerClick() {    
     this.callFilterFunction.emit();
+  } 
+
+  
+  hideShowSettings(value) {    
+    this.settingsEmit.emit(value);
   } 
 
 }
