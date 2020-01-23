@@ -1,7 +1,7 @@
 import { Component, OnInit ,ViewChild, ElementRef } from '@angular/core';
 import { DefaultServiceService } from '../services/default-service.service';
-import {MatMenuTrigger} from '@angular/material/menu';
 import * as xlsx from 'xlsx';
+import { FunctionClass } from "../globals/function";
 
 @Component({
   selector: 'app-datagrid-table',
@@ -11,35 +11,22 @@ import * as xlsx from 'xlsx';
 export class DatagridTableComponent implements OnInit {
   
   @ViewChild('epltable', { static: false }) epltable: ElementRef;
-  // @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   table = {
     tableHeaders :['Name','January','February','March','April','May', 'June','July','August','September','October','November','December','Q1', 'Q2', 'Q3', 'Q4', 'Best', 'Ziel'],
-    tableRows: [
-      // ['Personalkosten','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856'],
-      // ['...','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856'],
-      // ['Personalkosten','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856'],
-      // ['...','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856','102856','102856','102856','102856','4102856']
-    ]
+    tableRows: []
   }
 
   disableExport: boolean = false;
   
-  constructor(private defaultService: DefaultServiceService) { 
-    this.defaultService.subsVar = this.defaultService.callFilterFunction.subscribe((name: string) => {
-      // let id = this.defaultService.getPartnerId();
+  constructor(private defaultService: DefaultServiceService, private functions:FunctionClass) { 
+    this.functions.subsVar = this.functions.callFilterFunction.subscribe((name: string) => {
       this.getTableData(284, null);
     });
 
-    this.defaultService.reSubsVar = this.defaultService.resetFilterFunction.subscribe((name: string) => {
-      // let id = this.defaultService.getPartnerId();
+    this.functions.reSubsVar = this.functions.resetFilterFunction.subscribe((name: string) => {
       this.getTableData(284, true);
     });
-
-    this.defaultService.exportVar = this.defaultService.updateExportButton.subscribe((value: boolean) => {
-      this.disableExport = value;
-    });
-
   }
   data: any;
   newFlag  : any = false;
@@ -57,7 +44,7 @@ export class DatagridTableComponent implements OnInit {
   }
 
   getTableData(partnerId, firstTime){
-    document.documentElement.setAttribute('style','cursor:wait');
+    document.documentElement.setAttribute('style','cursor:wait; pointer-events:none');
     this.defaultService.getMonat(partnerId, firstTime).subscribe(response =>{      
     this.table.tableRows = [];
       this.data = response;
@@ -69,14 +56,14 @@ export class DatagridTableComponent implements OnInit {
     }else{
       this.noDataValue = this.data.value;
     }
-      document.documentElement.setAttribute('style','cursor:auto');
+      document.documentElement.setAttribute('style','cursor:auto; pointer-events:auto');
       this.table.tableRows = row;
       this.newFlag = this.table.tableRows.length ? false : true;
     },
     error =>{
       this.newFlag = this.table.tableRows.length ? false : true;
       setTimeout(function(){
-        document.documentElement.setAttribute('style','cursor:auto');
+        document.documentElement.setAttribute('style','cursor:auto; pointer-events:auto');
       },2000);
     });
     

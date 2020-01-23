@@ -1,5 +1,6 @@
 import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { DefaultServiceService } from '../services/default-service.service';
+import { FunctionClass } from './../globals/function';
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
@@ -26,7 +27,7 @@ export class FiltersComponent implements OnInit {
   validFilter: boolean= false;
   depotBind: any;
   newArray: any;
-  constructor(private defaultService: DefaultServiceService) { }
+  constructor(private defaultService: DefaultServiceService, private functions:FunctionClass) { }
   @Input() mainFilterData: any;
 
   ngOnInit() {
@@ -57,7 +58,7 @@ export class FiltersComponent implements OnInit {
     const tempDate = new Date(event.value);
     this.selectedDate = tempDate.getFullYear();
   }
-  optionSelected(event, text, index) {
+  optionSelected(event, text) {
     console.log(event, text);
     if (text == 'Region' || text == 'Depot') {
 
@@ -71,8 +72,8 @@ export class FiltersComponent implements OnInit {
     }
     if (text == 'Partner') {
       console.log("Partner Selected", event);
-      this.defaultService.setPartnerId(event);
-      this.defaultService.onFirstComponentButtonClick();
+      this.functions.setPartnerId(event);
+      this.functions.onFirstComponentButtonClick();
     }
     if (text == 'Kategorie') {
       this.selectedGroup = event && event.code ? event.code : '';
@@ -87,8 +88,8 @@ export class FiltersComponent implements OnInit {
 
   filterData() {
     
-      this.defaultService.setFilterData(this.selectedGroup, this.selectedKpi, this.selectedDate, this.selectedDepot);
-      this.defaultService.filerClick();
+      this.functions.setFilterData(this.selectedGroup, this.selectedKpi, this.selectedDate, this.selectedDepot);
+      this.functions.filerClick();
       this.closeModal();
   }
 
@@ -101,7 +102,7 @@ export class FiltersComponent implements OnInit {
     this.selectedKpi = '';
     this.selectedArray[this.previousSelected] = false;
     this.previousSelected = -1;
-    this.defaultService.resetFilterData();
+    this.functions.resetFilterData();
     this.closeModal();
   }
 

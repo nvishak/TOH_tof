@@ -4,17 +4,15 @@ import { Subscription } from 'rxjs/internal/Subscription';
 @Injectable({
     providedIn: 'root'
 })
-export class Function {
+export class FunctionClass {
 
     constructor() { }
     subsVar: Subscription;
-    reSubsVar: Subscription;
-    exportVar: Subscription;
+    reSubsVar: Subscription;    
     settingsvar: Subscription;
     invokeFirstComponentFunction = new EventEmitter();
     callFilterFunction = new EventEmitter();
     resetFilterFunction = new EventEmitter();
-    updateExportButton = new EventEmitter();
     settingsEmit = new EventEmitter();
     PartnerId: any;
     kpiGroupValue: any;

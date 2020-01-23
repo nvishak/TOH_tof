@@ -8,7 +8,7 @@ import { DefaultServiceService } from '../services/default-service.service';
 })
 export class DatagridComponent implements OnInit {
   constructor(private defaultService: DefaultServiceService) { }
-  
+
   time = new Date();
   timer;
   currentTime;
@@ -19,23 +19,18 @@ export class DatagridComponent implements OnInit {
   version: any = {
     value: ''
   };
-  
+
   filterActive: boolean = false;
   ngOnInit() {
     this.timer = setInterval(() => {
       this.time = new Date();
       this.currentTime = this.currentTime = this.time.getDate() + "/"
-      + (this.time.getMonth()+1)  + "/" 
-      + this.time.getFullYear() + " @ "  
-      + this.time.getHours() + ":"  
-      + this.time.getMinutes() + ":" 
-      + this.time.getSeconds();
+        + (this.time.getMonth() + 1) + "/"
+        + this.time.getFullYear() + " @ "
+        + this.time.getHours() + ":"
+        + this.time.getMinutes() + ":"
+        + this.time.getSeconds();
     }, 1000);
-
-    this.defaultService.getVersion().subscribe(data => {
-      this.version = data;
-    });
-
   }
 
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DefaultServiceService } from './services/default-service.service';
 import { Router  } from '@angular/router';
+import { FunctionClass } from "./globals/function";
 
 @Component({
   selector: 'app-root',
@@ -14,8 +14,8 @@ export class AppComponent {
   time:any;
   hideSettings:boolean = false;
 
-  constructor(private defaultService: DefaultServiceService, private router:Router){
-    this.defaultService.settingsvar = this.defaultService.settingsEmit.subscribe((flag: boolean) => {
+  constructor(private router:Router, private functions:FunctionClass){
+    this.functions.settingsvar = this.functions.settingsEmit.subscribe((flag: boolean) => {
       this.hideSettings = flag;
     });
   }
@@ -33,7 +33,7 @@ export class AppComponent {
   }
 
   logout(){
-    this.defaultService.hideShowSettings(true);    
+    this.functions.hideShowSettings(true);    
     this.router.navigate(['']);
   }
 

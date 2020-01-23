@@ -1,34 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { EventEmitter } from '@angular/core';
-import { Subscription } from 'rxjs/internal/Subscription'; 
 import { KpiGroup } from '../interface/kpiGroupInterface';
 import { KpiSet } from '../interface/kpiSetInterface';
 import { Depot } from '../interface/depotInterface';
 import { Monat } from '../interface/monatInterface';
-
-import { Function } from "../globals/function";
+import { FunctionClass } from "../globals/function";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DefaultServiceService {
     
-  subsVar: Subscription;
-  reSubsVar: Subscription;
-  exportVar: Subscription;
-  settingsvar: Subscription;
-  invokeFirstComponentFunction = new EventEmitter();  
-  callFilterFunction = new EventEmitter();  
-  resetFilterFunction = new EventEmitter();  
-  updateExportButton = new EventEmitter();
-  settingsEmit = new EventEmitter();  
-  PartnerId: any;
-  kpiGroupValue:any;
-  kpiSetValue:any;
-  jahrValue:any;
-  depotNrsValue:any;
-  constructor(private http: HttpClient,private functions:Function ) { }
+  constructor(private http: HttpClient,private functions:FunctionClass ) { }
 
   getVersion(){
     return this.http.get("http://10.221.144.44:8080/tofKpiRS/version");
@@ -46,11 +29,12 @@ export class DefaultServiceService {
   }
   getMonat(id, firstTime){
     if(!firstTime){
+        let temp = this.functions.getFilterData();
         let paramsMap = new Map<any,any>();
-        paramsMap.set('kpiGruppen',this.kpiGroupValue);
-        paramsMap.set('kpiSet',this.kpiSetValue);        
-        paramsMap.set('depotNrs',this.depotNrsValue);        
-        paramsMap.set('jahr',this.jahrValue);
+        paramsMap.set('kpiGruppen',temp.kpiGroupValue);
+        paramsMap.set('kpiSet',temp.kpiSetValue);        
+        paramsMap.set('depotNrs',temp.depotNrsValue);        
+        paramsMap.set('jahr',temp.jahrValue);
   
       let params = new HttpParams();
       paramsMap.forEach((value: any, key: any) => {
@@ -67,41 +51,4 @@ export class DefaultServiceService {
   getDepot(id){
     return this.http.get<Depot>("http://10.221.144.44:8080/tofKpiRS/stammdaten/depots/" + id);
   }
-
-  onFirstComponentButtonClick() {    
-    this.invokeFirstComponentFunction.emit();    
-  } 
-
-  getPartnerId(){
-    return this.PartnerId;
-  }
-
-  setPartnerId(id){
-    this.PartnerId = id;
-  }
-
-  setFilterData(group,kpi, jahr, depo){
-    this.kpiGroupValue = group ? group : '';
-    this.kpiSetValue = kpi ? kpi : '';
-    this.jahrValue = jahr ? jahr : '';
-    this.depotNrsValue = depo ? depo : '';
-  }
-
-  resetFilterData(){
-    this.kpiGroupValue = '';
-    this.kpiSetValue = '';
-    this.jahrValue = '';
-    this.depotNrsValue = '';
-    this.resetFilterFunction.emit();
-  }
-
-  filerClick() {    
-    this.callFilterFunction.emit();
-  } 
-
-  
-  hideShowSettings(value) {    
-    this.settingsEmit.emit(value);
-  } 
-
 }
