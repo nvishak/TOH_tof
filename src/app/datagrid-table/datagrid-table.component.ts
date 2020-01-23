@@ -59,7 +59,7 @@ export class DatagridTableComponent implements OnInit {
     } else {
       this.noDataValue = this.data.value;
     }
-      document.documentElement.setAttribute('style','cursor:auto; pointer-events:auto');
+    document.documentElement.setAttribute('style', 'cursor:auto; pointer-events:auto');
     this.table.tableRows = row;
     this.newFlag = this.table.tableRows.length ? false : true;
     },

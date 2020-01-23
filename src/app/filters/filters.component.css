@@ -1,7 +1,7 @@
 .filterHeaders {background-color: lightgray;font-weight: bold;}
 #filterOptions {max-height: 600px;height: 600px;overflow-y: auto;padding: 10px;}
 #filterOptions li{ padding: 5px; border: 0; cursor: pointer;}
-#filterOptions ul.list-group.text-left {max-height: 20%;overflow-y: auto; min-height: 19%;}
+#filterOptions ul.list-group.text-left {max-height: 20%;overflow-y: auto; min-height: 19%;height:112px;}
 mat-card{padding: 5px;}
 .selectedRegion{ background-color: #ff901d6b;}
 #filterOptions span{font-weight: 700;}
