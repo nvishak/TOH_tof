@@ -33,8 +33,8 @@
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/@popperjs/core/dist/umd/popper.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js",
-              "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
-              "./node_modules/jquery.fancytree/dist/jquery.fancytree.min.js",
+              "./node_modules/jquery-ui-dist/jquery-ui.min.js",
+              "./node_modules/jquery.fancytree/dist/jquery.fancytree-all.js",
               "./node_modules/jquery.fancytree/dist/modules/jquery.fancytree.filter.js",
               "./node_modules/jquery.fancytree/dist/modules/jquery.fancytree.filter.js",
               "./node_modules/jquery.fancytree/dist/modules/jquery.fancytree.table.js"             
