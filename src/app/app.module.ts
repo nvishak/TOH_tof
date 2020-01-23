@@ -7,20 +7,16 @@ import { DatagridComponent } from './datagrid/datagrid.component';
 import { DatagridTableComponent } from './datagrid-table/datagrid-table.component';
 import { FiltersComponent } from './filters/filters.component';
 import { LoginComponent } from './login/login.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DropdownSearchComponent } from './dropdown-search/dropdown-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
- 
-import {MaterialModule} from './material.module';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import { MatCardModule } from '@angular/material';
-import {MatTabsModule} from '@angular/material/tabs';
- import {MatMenuModule} from '@angular/material/menu'; 
+
+import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import {MatButtonModule} from '@angular/material/button';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 @NgModule({
@@ -41,14 +37,11 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MatMenuModule,
     FlexLayoutModule,
-    MatCardModule, 
-    MatTabsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    MatButtonModule
-    
+
+
   ],
   providers: [FormsModule],
   bootstrap: [AppComponent]

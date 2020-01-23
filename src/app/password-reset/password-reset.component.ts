@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router  } from '@angular/router';
+import { Router } from '@angular/router';
 import { DefaultServiceService } from '../services/default-service.service';
 
 
@@ -13,16 +13,16 @@ export class PasswordResetComponent implements OnInit {
 
   username: any;
   password: any;
-  validation:boolean= false;
-  constructor(private router: Router, private defaultService : DefaultServiceService) { }
+  validation: boolean = false;
+  constructor(private router: Router, private defaultService: DefaultServiceService) { }
   ngOnInit() {
   }
 
   login() {
-    this.router.navigate(['Datagrid']);    
+    this.router.navigate(['Datagrid']);
   }
 
-  keyPress(){
+  keyPress() {
     this.validation = false;
   }
 

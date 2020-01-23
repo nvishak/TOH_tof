@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router  } from '@angular/router';
-import { FunctionClass } from "../globals/function";
+import { FunctionClass } from '../globals/function';
 
 @Component({
   selector: 'app-login',
@@ -10,26 +10,27 @@ import { FunctionClass } from "../globals/function";
 export class LoginComponent implements OnInit {
   username: any;
   password: any;
-  validation:boolean= false;
-  constructor(private router: Router, private functions:FunctionClass) { }
+  validation = false;
+  constructor(private router: Router, private functions: FunctionClass) { }
 
   ngOnInit() {
     this.functions.hideShowSettings(true);
   }
 
+  // for Login. Hard coded username and password
   login() {
     if (this.username && this.password) {
-      if (this.username == 'admin' && this.password == 'admin') {
+      if (this.username === 'admin' && this.password === 'admin') {
         this.validation = false;
         this.functions.hideShowSettings(false);
         this.router.navigate(['Datagrid']);
-      }else{
+      } else {
         this.validation = true;
       }
     }
   }
-
-  keyPress(){
+// to handle validations
+  keyPress() {
     this.validation = false;
   }
 }

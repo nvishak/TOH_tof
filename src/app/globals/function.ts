@@ -8,7 +8,7 @@ export class FunctionClass {
 
     constructor() { }
     subsVar: Subscription;
-    reSubsVar: Subscription;    
+    reSubsVar: Subscription;
     settingsvar: Subscription;
     invokeFirstComponentFunction = new EventEmitter();
     callFilterFunction = new EventEmitter();
@@ -28,11 +28,11 @@ export class FunctionClass {
         return this.PartnerId;
     }
 
-    setPartnerId(id) {
+    setPartnerId(id: any) {
         this.PartnerId = id;
     }
 
-    setFilterData(group, kpi, jahr, depo) {
+    setFilterData(group: any, kpi: any, jahr: any, depo: any) {
         this.kpiGroupValue = group ? group : '';
         this.kpiSetValue = kpi ? kpi : '';
         this.jahrValue = jahr ? jahr : '';
@@ -51,17 +51,17 @@ export class FunctionClass {
         this.callFilterFunction.emit();
     }
 
-    hideShowSettings(value) {
+    hideShowSettings(value: boolean) {
         this.settingsEmit.emit(value);
     }
 
     getFilterData() {
-        let temp = {
+        const temp = {
             kpiGroupValue: this.kpiGroupValue,
             kpiSetValue: this.kpiSetValue,
             jahrValue: this.jahrValue,
             depotNrsValue: this.depotNrsValue
-        }
+        };
         return temp;
     }
 

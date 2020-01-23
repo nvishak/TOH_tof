@@ -15,7 +15,7 @@ export class FiltersComponent implements OnInit {
     // { text: 'Partner', type: 'drop', placeHolder: 'Partnerpicker', filters: ['Test 1', 'Test 2', 'Test 3', 'Test 4'] },
     // { text: 'Region', type: 'selection', placeHolder: 'Regionpicker', filters: ['Test 1', 'Test 2', 'Test 3', 'Test 4'] },
     { text: 'Depot', type: 'selection', placeHolder: 'Depotpicker', filters: [], bind: '' },
-  ]
+  ];
   selectedDate: any = '';
   allPartner: any;
   selectedGroup: any;
@@ -24,10 +24,10 @@ export class FiltersComponent implements OnInit {
   selectedDepot: any;
   selectedArray: any = [];
   previousSelected: any = -1;
-  validFilter: boolean= false;
+  validFilter = false;
   depotBind: any;
   newArray: any;
-  constructor(private defaultService: DefaultServiceService, private functions:FunctionClass) { }
+  constructor(private defaultService: DefaultServiceService, private functions: FunctionClass) { }
   @Input() mainFilterData: any;
 
   ngOnInit() {
@@ -43,14 +43,15 @@ export class FiltersComponent implements OnInit {
       this.filterOptions[2].filters = data;
     });
     this.defaultService.getAllDepots().subscribe((data) => {
-      let temp = [];
+      const temp = [];
       this.allPartner = data;
       for (var i = 0; i < this.allPartner.length; i++) {
-        if (this.allPartner[i].bezeichnung)
+        if (this.allPartner[i].bezeichnung){
           temp.push({bezeichnung: this.allPartner[i].bezeichnung, depotnr:this.allPartner[i].depotnr});
+        }
         this.selectedArray[this.allPartner[i].depotnr] = false;
       }
-      this.newArray = temp.sort((a,b) => (a.bezeichnung > b.bezeichnung) ? 1 : ((b.bezeichnung > a.bezeichnung) ? -1 : 0));
+      this.newArray = temp.sort((a, b) => (a.bezeichnung > b.bezeichnung) ? 1 : ((b.bezeichnung > a.bezeichnung) ? -1 : 0));
     });
   }
 
@@ -58,8 +59,7 @@ export class FiltersComponent implements OnInit {
     const tempDate = new Date(event.value);
     this.selectedDate = tempDate.getFullYear();
   }
-  optionSelected(event, text) {
-    console.log(event, text);
+  optionSelected(event, text: string) {
     if (text == 'Region' || text == 'Depot') {
 
       this.selectedDepot = event.depotnr;
@@ -71,7 +71,6 @@ export class FiltersComponent implements OnInit {
 
     }
     if (text == 'Partner') {
-      console.log("Partner Selected", event);
       this.functions.setPartnerId(event);
       this.functions.onFirstComponentButtonClick();
     }
@@ -87,7 +86,6 @@ export class FiltersComponent implements OnInit {
   }
 
   filterData() {
-    
       this.functions.setFilterData(this.selectedGroup, this.selectedKpi, this.selectedDate, this.selectedDepot);
       this.functions.filerClick();
       this.closeModal();
@@ -107,9 +105,9 @@ export class FiltersComponent implements OnInit {
   }
 
   closeModal(){
-      document.getElementById("rightNavBar").style.width = "0";
-      document.getElementById("rightNavBar").style.right = "-30px";
-      document.getElementById("mainBody").style.marginRight = '0';
+      document.getElementById('rightNavBar').style.width = '0';
+      document.getElementById('rightNavBar').style.right = '-30px';
+      document.getElementById('mainBody').style.marginRight = '0';
   }
 
 

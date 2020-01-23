@@ -9,14 +9,7 @@ body { margin: 0; font-family: "Roboto", "Arial","Helvetia cNeue", sans-serif; }
 div#mat-tab-label-0-2 {color: black;}
 #disabledHorizontalScroll .mat-sidenav-content{overflow-y: auto;overflow-x: hidden;}
 #mat-tab-content-0-0 .disableHorizontal{overflow-x: hidden;}
-#mat-tab-content-0-0 .mat-tab-body-content{
-    overflow-x: hidden;
-    overflow-y: auto;
-}
+#mat-tab-content-0-0 .mat-tab-body-content{overflow-x: hidden;overflow-y: auto;}
 #cdk-overlay-0 .mat-menu-panel .mat-menu-content{width: 180px;}
-.modal-open .modal {
-    background: #252424b3;
-}
-.model-content{
-    z-index: 1111;
-}
+.modal-open .modal {background: #252424b3;}
+.model-content{z-index: 1111;}
