@@ -12,8 +12,6 @@ export class FiltersComponent implements OnInit {
     { text: 'Auswerte Datum', type: 'date', bind: '' },
     { text: 'Kategorie', type: 'drop', placeHolder: 'Kategoriepicker', filters: [], bind: '' },
     { text: 'KPI Sets', type: 'drop', placeHolder: 'Setpicker', filters: [], bind: '' },
-    // { text: 'Partner', type: 'drop', placeHolder: 'Partnerpicker', filters: ['Test 1', 'Test 2', 'Test 3', 'Test 4'] },
-    // { text: 'Region', type: 'selection', placeHolder: 'Regionpicker', filters: ['Test 1', 'Test 2', 'Test 3', 'Test 4'] },
     { text: 'Depot', type: 'selection', placeHolder: 'Depotpicker', filters: [], bind: '' },
   ]
   selectedDate: any = '';
@@ -28,7 +26,6 @@ export class FiltersComponent implements OnInit {
   depotBind: any;
   newArray: any;
   constructor(private defaultService: DefaultServiceService, private functions:FunctionClass) { }
-  @Input() mainFilterData: any;
 
   ngOnInit() {
     this.getfilterValues();
@@ -59,7 +56,6 @@ export class FiltersComponent implements OnInit {
     this.selectedDate = tempDate.getFullYear();
   }
   optionSelected(event, text) {
-    console.log(event, text);
     if (text == 'Region' || text == 'Depot') {
 
       this.selectedDepot = event.depotnr;
@@ -71,7 +67,6 @@ export class FiltersComponent implements OnInit {
 
     }
     if (text == 'Partner') {
-      console.log("Partner Selected", event);
       this.functions.setPartnerId(event);
       this.functions.onFirstComponentButtonClick();
     }
