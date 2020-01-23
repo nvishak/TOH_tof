@@ -12,8 +12,6 @@ export class FiltersComponent implements OnInit {
     { text: 'Auswerte Datum', type: 'date', bind: '' },
     { text: 'Kategorie', type: 'drop', placeHolder: 'Kategoriepicker', filters: [], bind: '' },
     { text: 'KPI Sets', type: 'drop', placeHolder: 'Setpicker', filters: [], bind: '' },
-    // { text: 'Partner', type: 'drop', placeHolder: 'Partnerpicker', filters: ['Test 1', 'Test 2', 'Test 3', 'Test 4'] },
-    // { text: 'Region', type: 'selection', placeHolder: 'Regionpicker', filters: ['Test 1', 'Test 2', 'Test 3', 'Test 4'] },
     { text: 'Depot', type: 'selection', placeHolder: 'Depotpicker', filters: [], bind: '' },
   ];
   selectedDate: any = '';

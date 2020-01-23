@@ -11,11 +11,7 @@ export class DatagridComponent implements OnInit {
 
   time = new Date();
   timer;
-  currentTime;
-  mainFilterObject: any = {
-    category: [],
-    kpiSets: []
-  };
+  currentTime;  
   version: any = {
     value: ''
   };
