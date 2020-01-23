@@ -9,8 +9,8 @@ import { FiltersComponent } from './filters/filters.component';
 import { LoginComponent } from './login/login.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { DatepickerComponent } from './datepicker/datepicker.component';
-import { DropdownSearchComponent } from './dropdown-search/dropdown-search.component';
+import { DatepickerComponent } from './shared/datepicker/datepicker.component';
+import { DropdownSearchComponent } from './shared/dropdown-search/dropdown-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
 import {MaterialModule} from './material.module';
