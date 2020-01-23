@@ -7,24 +7,31 @@
             <div class="pull-right" id='datagridSettings'>
                 <span class="fill-space"></span>
 
-                <a class="pull-right setting-button" mat-button [matMenuTriggerFor]="beforeMenu"><span class="settingsIcon"><i class="fas fa-sliders-h"></i></span >Settings</a>
-                <a class="pull-right setting-button" mat-button (click)="openFilters()"><span class="settingsIcon"><i class="fas fa-filter"></i></span>Filter</a>
+                <a class="pull-right setting-button" mat-button [matMenuTriggerFor]="beforeMenu"><span
+                        class="settingsIcon"><i class="fas fa-sliders-h"></i></span>Settings</a>
+                <a class="pull-right setting-button" mat-button (click)="openFilters()"><span class="settingsIcon"><i
+                            class="fas fa-filter"></i></span>Filter</a>
                 <mat-menu #beforeMenu="matMenu" xPosition="before">
                     <button mat-menu-item [ngClass]="disableExport ? 'disablePointer': 'enablePointer'"
-                        (click)="export()" [ngClass]="disableExport ? 'disableclick': ''"><span class="settingsIcon"><i class="fas fa-file-export"></i></span>Export</button>
-                     <div  class="lineBreak"></div>
-                    <button mat-menu-item (click)="expandAll()"><span class="settingsIcon"><i class="fas fa-expand-alt"></i></span>Alles aufklappen</button>
-                    <button mat-menu-item (click)="collapseAll()"><span class="settingsIcon"><i class="fas fa-compress-alt"></i></span>Alles zuklappen</button>
-                    <button mat-menu-item (click)="columnWidth()"><span class="settingsIcon"><i class="fas fa-arrows-alt-h"></i></span>Spaltenbreite</button>
+                        (click)="export()" [ngClass]="disableExport ? 'disableclick': ''"><span class="settingsIcon"><i
+                                class="fas fa-file-export"></i></span>Export</button>
+                    <div class="lineBreak"></div>
+                    <button mat-menu-item (click)="expandAll()"><span class="settingsIcon"><i
+                                class="fas fa-expand-alt"></i></span>Alles aufklappen</button>
+                    <button mat-menu-item (click)="collapseAll()"><span class="settingsIcon"><i
+                                class="fas fa-compress-alt"></i></span>Alles zuklappen</button>
+                    <button mat-menu-item (click)="columnWidth()"><span class="settingsIcon"><i
+                                class="fas fa-arrows-alt-h"></i></span>Spaltenbreite</button>
                     <div style="border: 1px solid #dee2e6;"></div>
-                    <button mat-menu-item data-toggle="modal" data-target="#infoModal"><span class="settingsIcon"><i class="fas fa-info-circle"></i></span>Info</button>
+                    <button mat-menu-item data-toggle="modal" data-target="#infoModal"><span class="settingsIcon"><i
+                                class="fas fa-info-circle"></i></span>Info</button>
                 </mat-menu>
             </div>
         </div>
     </div>
 
     <div class="data-table borderBottom borderRight borderLeft" #epltable>
-        <table class="table" >
+        <table class="table">
             <thead>
                 <tr>
                     <th *ngFor="let header of table.tableHeaders; let num = index" class="borderBottom borderRight">
@@ -32,9 +39,7 @@
                 </tr>
                 <tr>
                     <th *ngFor="let inputBox of table.tableHeaders; let num = index" class="borderBottom borderRight">
-                        <!-- <span> -->
                         <input type="text" placeholder={{inputBox}} class="form-control">
-                        <!-- </span> -->
                     </th>
                 </tr>
             </thead>
@@ -48,37 +53,31 @@
             </tbody>
 
         </table>
-        
     </div>
     <div class="mt-3 text-right footerGroup" *ngIf="!newFlag">
         <nav>
             <ul class="listGroupClass" style="margin-bottom: 0;">
                 <li class="listClass"><a>&#171;</a></li>
                 <li class="listClass"><a>&#60;</a></li>
-            <li class="listClass" *ngFor="let page of pages"><a>{{page}}</a></li>
+                <li class="listClass" *ngFor="let page of pages"><a>{{page}}</a></li>
                 <li class="listClass"><a>&#62;</a></li>
                 <li class="listClass"><a>&#187;</a></li>
             </ul>
-
         </nav>
     </div>
-
-    
-
 </mat-card>
 
 
-<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false" >
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true" data-backdrop="false">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-body text-center">
-            The Application Version is - {{version.value}}
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                The Application Version is - {{version.value}}
+            </div>
+            <div class="modal-footer justify-content-center border-top-0">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px;">Ok</button>
+            </div>
         </div>
-        <div class="modal-footer justify-content-center border-top-0">
-          <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px;">Ok</button>
-        </div>
-      </div>
     </div>
-  </div>
-
-
+</div>

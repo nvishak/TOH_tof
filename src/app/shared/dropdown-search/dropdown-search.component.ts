@@ -8,26 +8,25 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class DropdownSearchComponent implements OnInit {
 
   constructor() { }
-  @Input() data : any;
-  @Input() bind : any;
+  @Input() data: any;
+  @Input() bind: any;
   @Output() selectedOption = new EventEmitter<object>();
-  binding : any;
+  binding: any;
   ngOnInit() {
   }
 
-  selectOption(value){
+  selectOption(value) {
     let temp;
-    if(this.data.text == 'Kategorie' || this.data.text == 'KPI Sets'){
+    if(this.data.text == 'Kategorie' || this.data.text == 'KPI Sets') {
       temp = value.bezeichnung;
-    }else{
+    } else {
       temp = value;
     }
     this.binding = temp;
     this.selectedOption.emit(value);
   }
- 
-  myMethod(event){
-    if(this.bind == ''){
+  myMethod(event) {
+    if(this.bind == '') {
       this.selectedOption.emit();
     }
   }

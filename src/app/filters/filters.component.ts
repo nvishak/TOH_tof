@@ -45,7 +45,7 @@ export class FiltersComponent implements OnInit {
       this.allPartner = data;
       for (var i = 0; i < this.allPartner.length; i++) {
         if (this.allPartner[i].bezeichnung){
-          temp.push({bezeichnung: this.allPartner[i].bezeichnung, depotnr:this.allPartner[i].depotnr});
+          temp.push({bezeichnung: this.allPartner[i].bezeichnung, depotnr: this.allPartner[i].depotnr});
         }
         this.selectedArray[this.allPartner[i].depotnr] = false;
       }
@@ -102,7 +102,7 @@ export class FiltersComponent implements OnInit {
     this.closeModal();
   }
 
-  closeModal(){
+  closeModal() {
       document.getElementById('rightNavBar').style.width = '0';
       document.getElementById('rightNavBar').style.right = '-30px';
       document.getElementById('mainBody').style.marginRight = '0';

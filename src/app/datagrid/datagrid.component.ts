@@ -11,7 +11,7 @@ export class DatagridComponent implements OnInit {
 
   time = new Date();
   timer;
-  currentTime;  
+  currentTime;
   version: any = {
     value: ''
   };
@@ -20,11 +20,11 @@ export class DatagridComponent implements OnInit {
   ngOnInit() {
     this.timer = setInterval(() => {
       this.time = new Date();
-      this.currentTime = this.currentTime = this.time.getDate() + "/"
-        + (this.time.getMonth() + 1) + "/"
-        + this.time.getFullYear() + " @ "
-        + this.time.getHours() + ":"
-        + this.time.getMinutes() + ":"
+      this.currentTime = this.currentTime = this.time.getDate() + '/'
+        + (this.time.getMonth() + 1) + '/'
+        + this.time.getFullYear() + ' @ '
+        + this.time.getHours() + ':'
+        + this.time.getMinutes() + ':'
         + this.time.getSeconds();
     }, 1000);
   }

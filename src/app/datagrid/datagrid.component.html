@@ -1,14 +1,14 @@
 <div>
     <br>
-    <div class="container">
-        <div class="container">
+    <div class='container'>
+        <div class='container'>
             <!-- Table Components -->
-            <div class="row" id="mainBody">
+            <div class="row" id='mainBody'>
                 <!-- Left Table -->
-                <div class="datagridBorder col-lg-12 col-md-12" #epltable>
+                <div class='datagridBorder col-lg-12 col-md-12' #epltable>
                     <app-datagrid-table></app-datagrid-table>
                 </div>
-                <div class="col-lg-3 col-md-3 rightNavBar" id="rightNavBar">
+                <div [ngIf]='filterVisible' class='col-lg-3 col-md-3 rightNavBar' id='rightNavBar'>
                     <app-filters></app-filters>
                 </div>
                 <!-- Right Table -->
@@ -16,10 +16,10 @@
         </div>
     </div>
     <br>
-    <div class="container">
+    <div class='container'>
     </div>
 </div>
 
-<div class="blocks">
+<div class='blocks'>
     <!-- Tabs Block -->
 </div>

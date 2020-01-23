@@ -1,72 +1,18 @@
 
-.data-table{
-    max-height: 670px;
-    overflow-x: auto;
-}
-#noData td{
-    vertical-align: middle;
-    text-align: center;
-    width: 100%;
-}
-#noData{
-    height: 670px;
-    width: 100%;
-}
-
+.data-table{max-height: 670px;overflow-x: auto;}
+#noData td{vertical-align: middle;text-align: center;width: 100%;}
+#noData{height: 670px;width: 100%;}
 .table{line-height: 1.5em;}
-.table th{
-    font-size: 0.875em;
-    margin: 0;
-    padding: .5em 1em;
-    font-weight: 700;
-    vertical-align: bottom;
-    min-width: 220px;
-}
-.table th input{
-    line-height: normal;
-    height: auto;
-}
-.table td{
-    font-size: 0.875em;
-    margin: 0;
-    padding: .5em 1em;
-    vertical-align: top;
-    color: #212529;
-}
-.pull-right{
-    float: right;
-}
-.setting-button{
-    margin-bottom: 5px;
-    color: #007bff;
-}
-.setting-button span{
-    padding-bottom: 10px;
-}
-.listGroupClass{
-    display: inline-flex;
-    font-size: .875em;
-    padding: 0;
-    list-style: none;
-    border-radius: .25rem;
-}
-.listClass{
-    display: inline;
-    line-height: 2rem;
-}
-.listClass a {
-    padding: .5rem .75rem;
-    position: relative;
-    border: 1px solid #dee2e6;
-    margin-left: 0;
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
-    cursor: pointer;
-}
+.table th{font-size: 0.875em;margin: 0;padding: .5em 1em;font-weight: 700;vertical-align: bottom;min-width: 220px;}
+.table th input{line-height: normal;height: auto;}
+.table td{font-size: 0.875em;margin: 0;padding: .5em 1em;vertical-align: top;color: #212529;}
+.pull-right{float: right;}
+.setting-button{margin-bottom: 5px;color: #007bff;}
+.setting-button span{padding-bottom: 10px;}
+.listGroupClass{display: inline-flex;font-size: .875em;padding: 0;list-style: none;border-radius: .25rem;}
+.listClass{display: inline;line-height: 2rem;}
+.listClass a {padding: .5rem .75rem;position: relative;border: 1px solid #dee2e6;margin-left: 0;border-top-left-radius: .25rem;border-bottom-left-radius: .25rem;cursor: pointer;}
 .footerGroup{color:#1e6bb8}
-
-.listClass:hover{
-    background-color: #e9ecef;
-}
+.listClass:hover{background-color: #e9ecef;}
 .settingsIcon{margin-right: 6px;}
 .lineBreak{border: 1px solid #dee2e6;}
