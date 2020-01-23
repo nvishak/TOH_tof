@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { DefaultServiceService } from '../default-service.service';
+import { DefaultServiceService } from '../services/default-service.service';
 
 @Component({
   selector: 'app-datagrid',

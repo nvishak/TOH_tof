@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router  } from '@angular/router';
-import { DefaultServiceService } from './../default-service.service';
+import { DefaultServiceService } from '../services/default-service.service';
 
 
 @Component({

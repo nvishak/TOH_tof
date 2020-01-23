@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule, Input } from '@angular/core';
-import { DefaultServiceService } from '../default-service.service';
+import { DefaultServiceService } from '../services/default-service.service';
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',

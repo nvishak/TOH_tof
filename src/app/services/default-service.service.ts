@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription'; 
-import { KpiGroup } from './interface/kpiGroupInterface';
-import { KpiSet } from './interface/kpiSetInterface';
-import { Depot } from './interface/depotInterface';
-import { Monat } from './interface/monatInterface';
+import { KpiGroup } from '../interface/kpiGroupInterface';
+import { KpiSet } from '../interface/kpiSetInterface';
+import { Depot } from '../interface/depotInterface';
+import { Monat } from '../interface/monatInterface';
+
+import { Function } from "../globals/function";
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +28,7 @@ export class DefaultServiceService {
   kpiSetValue:any;
   jahrValue:any;
   depotNrsValue:any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private functions:Function ) { }
 
   getVersion(){
     return this.http.get("http://10.221.144.44:8080/tofKpiRS/version");

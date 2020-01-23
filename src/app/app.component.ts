@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DefaultServiceService } from './default-service.service';
+import { DefaultServiceService } from './services/default-service.service';
 import { Router  } from '@angular/router';
 
 @Component({
