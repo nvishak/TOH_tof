@@ -13,7 +13,6 @@ export class DatepickerComponent implements OnInit {
   }
 
   method(event){
-    // console.log(event);
     this.selectedDate.emit(event);
   }
 

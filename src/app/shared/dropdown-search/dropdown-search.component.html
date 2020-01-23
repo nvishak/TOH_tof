@@ -1,5 +1,3 @@
-
-
 <!-- material based dropdown -->
 <div ngbDropdown *ngIf="data.text != 'Kategorie' && data.text != 'KPI Sets'">
     <input  class="form-control" type="text" [(ngModel)]="bind" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom">
@@ -7,8 +5,6 @@
     <li *ngFor="let options of data.filters" (click)="selectOption(options)" ngbDropdownItem>{{options}}</li>
     </div>
 </div>
-
-
 <div ngbDropdown *ngIf="data.text == 'Kategorie' || data.text == 'KPI Sets'" >
     <input class="form-control" type="search" [(ngModel)]="bind" [placeholder]="data.placeHolder" ngbDropdownToggle placement="bottom" (ngModelChange)="myMethod($event)">
     <div class="dropdownGroup border" ngbDropdownMenu >

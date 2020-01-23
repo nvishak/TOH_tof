@@ -1,9 +1,3 @@
-.dropdownGroup{
-    max-height: 150px; overflow-y: auto;
-    -ms-overflow-style: none;
-    width: 100%;
-}
-.dropdownGroup::-webkit-scrollbar{
-    display: none;
-}
+.dropdownGroup{max-height: 150px; overflow-y: auto;-ms-overflow-style: none;width: 100%;}
+.dropdownGroup::-webkit-scrollbar{display: none;}
 li{ padding: 5px; border: 0; cursor: pointer;}

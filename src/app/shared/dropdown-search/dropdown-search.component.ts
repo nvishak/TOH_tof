@@ -26,7 +26,7 @@ export class DropdownSearchComponent implements OnInit {
     this.selectedOption.emit(value);
   }
   myMethod(event) {
-    if(this.bind == '') {
+    if (this.bind == '') {
       this.selectedOption.emit();
     }
   }

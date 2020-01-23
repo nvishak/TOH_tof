@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DatagridComponent } from './datagrid/datagrid.component';
-import { LoginComponent } from "./login/login.component";
-import { PasswordResetComponent } from "./password-reset/password-reset.component";
+import { LoginComponent } from './login/login.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 
 
